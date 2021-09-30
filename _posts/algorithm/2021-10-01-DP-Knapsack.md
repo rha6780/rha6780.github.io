@@ -1,5 +1,5 @@
 ---
-title: "Disjoint-set, Union-find"
+title: "DP-Knapsack"
 date: 2021-10-01
 
 categories:
