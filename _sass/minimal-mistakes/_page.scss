@@ -71,6 +71,7 @@ body {
 .page__title {
   margin-top: 0;
   line-height: 1;
+  border-bottom: 1px solid $border-color;
 
   a {
     color: $text-color;
@@ -84,10 +85,13 @@ body {
 
 .page__lead {
   font-family: $global-font-family;
-  font-size: $type-size-4;
+  font-size: $type-size-5;
 }
 
 .page__content {
+  margin-top: 30px;
+  border-bottom: 1px solid $border-color;
+
   h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
