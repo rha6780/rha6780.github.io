@@ -3,7 +3,7 @@ main:
   - title: "Home"
     url: https://rha6780.github.io
   - title: "Algorithm"
-    url: /_pages/algorithm/
+    url: /categories/
   #- title: "Quick-Start Guide"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
