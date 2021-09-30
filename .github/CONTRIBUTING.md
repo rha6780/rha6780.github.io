@@ -1,16 +1,23 @@
-# How to Contribute
+# Contributing
 
-I want to thank you for sparing a time to improve this project! Here are some guidelines for contributing：
+Found a typo in the documentation or interested in [fixing a bug](https://github.com/mmistakes/minimal-mistakes/issues)? Then by all means [submit an issue](https://github.com/mmistakes/minimal-mistakes/issues/new) or [pull request](https://help.github.com/articles/using-pull-requests/). If this is your first pull request, it may be helpful to read up on the [GitHub Flow](https://guides.github.com/introduction/flow/) first.
 
-To ensure that the blog design is not confused, this project does not accept suggestions for design changes, such as color scheme, fonts, typography, etc. If your request is about an enhancement, it is recommended to first submit a [`Feature Request`](https://github.com/cotes2020/jekyll-theme-chirpy/issues/new?labels=enhancement&template=feature_request.md) issue to discuss whether your idea fits the project. 
+For help with using the theme or general Jekyll support questions, please use the [Jekyll Talk forums](https://talk.jekyllrb.com/).
 
-Generally, contribute to the project by:
+Minimal Mistakes has been designed as a base for you to customize and fit your 
+site's unique needs. Please keep this in mind when requesting features and/or 
+submitting pull requests. If it's not something that most people will use, I 
+probably won't consider it. When in doubt ask.
 
-1. Fork this project on GitHub and clone it locally.
-2. Create a new branch from `master` and give it a descriptive name (e.g., `my-new-feature`, `fix-a-bug`).
-3. After completing the development, commit and push to remote.
-4. Submit a new pull request.
+This goes for author sidebar links and "share button" additions -- I have no 
+intention of merging in every possibly option, the essentials are there to get 
+you started :smile:.
 
----
+## Pull Requests
 
-:tada: Your volunteering will make the open source world more beautiful, thanks again! :tada:
+When submitting a pull request:
+
+1. Clone the repo.
+2. Create a branch off of `master` and give it a meaningful name (e.g. 
+   `my-awesome-new-feature`) and describe the feature or fix.
+3. Open a pull request on GitHub.

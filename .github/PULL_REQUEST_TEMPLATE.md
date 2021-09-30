@@ -1,44 +1,26 @@
-## Description
+<!--
+  Thanks for creating a Pull Request! Before you submit, please make sure
+  you've done the following:
 
-<!-- 
-Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
-
-e.g. Fixes #(issue)
+  - Read the contributing document at https://github.com/mmistakes/minimal-mistakes#contributing
 -->
 
-## Type of change
-
-<!-- 
-Please select the desired item checkbox and change it to "[x]", then delete options that are not relevant.
--->
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation update
-
-## How has this been tested
-
-<!-- 
-Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration
+<!--
+  Choose one of the following by uncommenting it:
 -->
 
-- [ ] I have run `bash ./tools/deploy.sh --dry-run` (at the root of the project) locally and passed
-- [ ] I have tested this feature in the browser
+<!-- This is a bug fix. -->
+<!-- This is an enhancement or feature. -->
+<!-- This is a documentation change. -->
 
-### Test Configuration
+## Summary
 
-- Browser type & version:
-- Operating system:
-- Bundler version:
-- Ruby version:
-- Jekyll version:
+<!--
+  Provide a description of what your pull request changes.
+-->
 
-### Checklist
-<!-- Select checkboxes by change the "[ ]" to "[x]" -->
-- [ ] My code follows the [Google style guidelines](https://google.github.io/styleguide/)
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] Any dependent changes have been merged and published in downstream modules
+## Context
+
+<!--
+  Is this related to any GitHub issue(s)?
+-->

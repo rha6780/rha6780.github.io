@@ -1,30 +1,35 @@
 {
-  "name": "jekyll-theme-chirpy",
-  "version": "4.3.0",
-  "description": "A minimal, sidebar, responsive web design Jekyll theme that focuses on text presentation.",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "minimal-mistakes",
+  "private": true,
+  "version": "4.24.0",
+  "description": "Minimal Mistakes 2 column Jekyll theme.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cotes2020/jekyll-theme-chirpy.git"
+    "url": "git://github.com/mmistakes/minimal-mistakes.git"
   },
-  "author": "Cotes Chung",
+  "keywords": [
+    "jekyll",
+    "theme",
+    "minimal"
+  ],
+  "author": "Michael Rose",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cotes2020/jekyll-theme-chirpy/issues"
+    "url": "https://github.com/mmistakes/minimal-mistakes/issues"
   },
-  "homepage": "https://github.com/cotes2020/jekyll-theme-chirpy#readme",
-  "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-insert": "^0.5.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-uglify": "^3.0.2",
-    "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony"
+  "homepage": "https://mmistakes.github.io/minimal-mistakes/",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "uglify-js": "^3.13.6"
+  },
+  "scripts": {
+    "uglify": "uglifyjs assets/js/vendor/jquery/jquery-3.5.1.js assets/js/plugins/jquery.fitvids.js assets/js/plugins/jquery.greedy-navigation.js assets/js/plugins/jquery.magnific-popup.js assets/js/plugins/jquery.ba-throttle-debounce.js assets/js/plugins/smooth-scroll.js assets/js/plugins/gumshoe.js assets/js/_main.js -c -m -o assets/js/main.min.js",
+    "add-banner": "node banner.js",
+    "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
+    "build:js": "npm run uglify && npm run add-banner"
   }
 }
