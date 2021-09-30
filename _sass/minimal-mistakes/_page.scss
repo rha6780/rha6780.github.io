@@ -71,6 +71,7 @@ body {
 .page__title {
   margin-top: 0;
   line-height: 1;
+  padding-bottom: 10px;
   border-bottom: 1px solid $border-color;
 
   a {
@@ -90,6 +91,7 @@ body {
 
 .page__content {
   margin-top: 30px;
+  padding-top: 10px;
   border-bottom: 1px solid $border-color;
 
   h2 {

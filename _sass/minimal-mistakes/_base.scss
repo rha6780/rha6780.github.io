@@ -171,7 +171,7 @@ td > code {
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   font-size: 0.8em;
-  background: $code-background-color;
+  background: $code-background-color-dark;
   border-radius: $border-radius;
 
   &:before,
@@ -188,6 +188,7 @@ hr {
   margin: 1em 0;
   border: 0;
   border-top: 1px solid $border-color;
+  background: $code-background-color-dark;
 }
 
 /* lists */
