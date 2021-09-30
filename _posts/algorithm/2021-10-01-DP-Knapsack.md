@@ -6,6 +6,7 @@ categories:
   - algorithm
 tags:
   - algo
+  - DP
 ---
 
 ### 배낭 문제
