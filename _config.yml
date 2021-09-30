@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 locale                   : "en-US"
 title                    : "rha6780"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "Coding Study!"# site tagline that appears below site title in masthead
 name                     : "Sejeong Byun"
 description              : "Study Computer science."
 url                      : "https://rha6780.github.io"# the base hostname & protocol for your site e.g. "https://rha6780.github.io"
