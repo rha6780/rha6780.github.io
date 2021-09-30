@@ -1,6 +1,6 @@
 ---
 title: "Disjoint-set, Union-find"
-date: 2021-09-30
+date: 2021-10-01
 
 categories:
   - algorithm
