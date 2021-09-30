@@ -34,6 +34,7 @@ public static void SE(int a) {
 
 
 추천문제
+
 ---
 
 [1978번: 소수 찾기](https://www.acmicpc.net/problem/1978)
