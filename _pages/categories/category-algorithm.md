@@ -1,5 +1,5 @@
 ---
-title: "알고리즘 with JAVA"
+title: "Algorithm with JAVA"
 layout: archive
 permalink: categories/algorithm
 author_profile: true
