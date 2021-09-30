@@ -284,11 +284,11 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
-      sidebar:
-        nav: "docs"
+      sidebar_main: true
+
 
   # _pages
   - scope:

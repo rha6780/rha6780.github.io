@@ -2,8 +2,6 @@
 main:
   - title: "Home"
     url: https://rha6780.github.io
-  - title: "Algorithm"
-    url: /categories/
   #- title: "Quick-Start Guide"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
@@ -14,3 +12,7 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+sidemenu:
+  - title: "Algorithm"
+    url: /categories/
