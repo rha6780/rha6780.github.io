@@ -20,12 +20,12 @@
 
 .archive__item {
   position: relative;
-  background-color: cadetblue;
-  padding: 5px;
+  
 
   a {
     position: relative;
     z-index: 10;
+    
   }
 
   a[rel="permalink"] {
@@ -127,6 +127,9 @@
    ========================================================================== */
 
 .list__item {
+  margin: 2px;
+  background-color: lightblue;
+  padding: 5px;
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;
