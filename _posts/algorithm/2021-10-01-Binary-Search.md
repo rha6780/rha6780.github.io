@@ -9,7 +9,8 @@ tags:
 ---
 
 
-### Binary search, 이분탐색
+### Binary search
+**이분탐색**
 
 ---
 

@@ -9,8 +9,7 @@ tags:
 ---
 
 ### Disjoint-set
-
-또는 Union-find, 서로소 집합
+**Union-find, 서로소 집합**
 
 ---
 <br>

@@ -9,6 +9,7 @@ tags:
 ---
 
 
+### SegmentTree
 <br>
 
 이분탐색 선행 필요.
