@@ -17,7 +17,7 @@
       {% assign words = document.content | strip_html | number_of_words %}
 
       <span class="page__meta-readtime">
-        <i class="far {% if include.type == 'grid' and post.date %}fa-fw {% endif %}fa-clock" aria-hidden="true"></i>
+        <i class="far {% if include.type == 'grid' and post.date %}fa-fw {% endif %}fa-calendar-alt" aria-hidden="true"></i>
         {{ post.date | date: " %Y.%m.%d" }}
       </span>
     {% endif %}
