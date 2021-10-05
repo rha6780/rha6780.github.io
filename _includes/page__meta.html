@@ -5,7 +5,7 @@
       {% assign date = document.date %}
       <span class="page__meta-date">
         <i class="far {% if include.type == 'grid' and post.date %}fa-fw {% endif %}fa-calendar-alt" aria-hidden="true"></i>
-        {{ post.date | date: " %Y.%m.%d" }}
+        {{ document.date | date: " %Y.%m.%d" }}
         
       </span>
     {% endif %}
@@ -18,7 +18,7 @@
 
       <span class="page__meta-readtime">
         <i class="far {% if include.type == 'grid' and post.date %}fa-fw {% endif %}fa-calendar-alt" aria-hidden="true"></i>
-        {{ post.date | date: " %Y.%m.%d" }}
+        {{ document.date | date: " %Y.%m.%d" }}
         
       </span>
     {% endif %}
