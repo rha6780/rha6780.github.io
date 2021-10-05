@@ -17,5 +17,16 @@
                 {% endfor %}
             </ul>
       </li>
+      <li>
+        <span class="nav__sub-title">Beakjoon</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Beakjoon" %}
+                        <li><a href="/categories/Beakjoon" class="">Beakjoon_JAVA ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+      </li>
   </ul>
 </nav>
