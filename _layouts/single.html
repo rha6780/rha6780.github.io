@@ -30,8 +30,8 @@ layout: default
             <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
           </h1>{% endif %}
           {% include page__meta.html %}
-          {% include post_categories.html %}
-          {% include post_tag.html %}
+          {% include posts_categories.html %}
+          {% include posts_tag.html %}
         </header>
       {% endunless %}
 
