@@ -4,8 +4,8 @@
     {% if document.show_date and document.date %}
       {% assign date = document.date %}
       <span class="page__meta-date">
-        <i class="far {% if include.type == 'grid' and post.date %}fa-fw {% endif %}fa-calendar-alt" aria-hidden="true"></i>
-        {{ post.date | date: " %Y.%m.%d" }}
+        <i class="far {% if include.type == 'grid' and post.date %}fa-fw {% endif %}fa-calendar-alt" aria-hidden="true">{{ post.date | date: " %Y.%m.%d" }}</i>
+        
       </span>
     {% endif %}
 
@@ -16,8 +16,8 @@
       {% assign words = document.content | strip_html | number_of_words %}
 
       <span class="page__meta-readtime">
-        <i class="far {% if include.type == 'grid' and post.date %}fa-fw {% endif %}fa-calendar-alt" aria-hidden="true"></i>
-        {{ post.date | date: " %Y.%m.%d" }}
+        <i class="far {% if include.type == 'grid' and post.date %}fa-fw {% endif %}fa-calendar-alt" aria-hidden="true">{{ post.date | date: " %Y.%m.%d" }}</i>
+        
       </span>
     {% endif %}
   </p>
