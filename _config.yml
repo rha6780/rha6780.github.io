@@ -20,7 +20,7 @@ title                    : "rha6780 :)"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "rha6780"
-description              : "Coding!"
+description              : "Coding Histroy!"
 url                      : "https://rha6780.github.io"# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -103,7 +103,8 @@ analytics:
 author:
   name             : "rha6780"
   avatar           : "/assets/profile/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Progress... Coding!"
+  bio              : "머쓱해요...! 코딩 초보 탈출기..!"
+  beakjoon         : "https://www.acmicpc.net/user/rha6780"
   location         :
   email            :
   links:
