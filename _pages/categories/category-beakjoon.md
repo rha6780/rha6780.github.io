@@ -1,10 +1,10 @@
 ---
 title: "Beakjoon_JAVA"
 layout: archive
-permalink: categories/Beakjoon
+permalink: categories/beakjoon
 author_profile: true
 sidebar_main: true
 ---
 
-{% assign posts = site.categories.Beakjoon %}
+{% assign posts = site.categories.beakjoon %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

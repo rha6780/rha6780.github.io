@@ -12,13 +12,13 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "algorithm" %}
-                        <li><a href="/categories/algorithm" class="">Algorithm with JAVA ({{category[1].size}})</a></li>
+                        <li><a href="/categories/algorithm" class="">Algorithm_JAVA ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[1] == "Beakjoon" %}
+                    {% if category[0] == "Beakjoon" %}
                         <li><a href="/categories/Beakjoon" class="">Beakjoon_JAVA ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
