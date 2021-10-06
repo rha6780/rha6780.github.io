@@ -161,7 +161,6 @@
 
   a {
     color: inherit;
-    font-size: 12px;
     text-decoration: none;
     margin-bottom: 10px;
   }
@@ -188,6 +187,15 @@
     margin-bottom: 20px;
   }
 
+}
+
+.custom-link {
+  border-bottom: 1px solid $border-color;
+  
+  a{
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
 }
 
 .author__urls-wrapper {
