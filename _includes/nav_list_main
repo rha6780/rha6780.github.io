@@ -18,8 +18,8 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Beakjoon" %}
-                        <li><a href="/categories/Beakjoon" class="">Beakjoon_JAVA ({{category[1].size}})</a></li>
+                    {% if category[0] == "beakjoon" %}
+                        <li><a href="/categories/beakjoon" class="">Beakjoon_JAVA ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
