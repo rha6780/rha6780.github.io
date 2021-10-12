@@ -1,5 +1,5 @@
 ---
-title: "코딩 대회"
+title: "event"
 layout: archive
 permalink: categories/event
 author_profile: true
