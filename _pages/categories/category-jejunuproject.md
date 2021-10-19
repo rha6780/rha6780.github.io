@@ -1,5 +1,5 @@
 ---
-title: "jejunuproject"
+title: "대학프로젝트"
 layout: archive
 permalink: categories/jejunuproject
 author_profile: true
