@@ -41,6 +41,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "aosdjango" %}
+                        <li><a href="/categories/aosdjango" class="">AOS_Django ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
       </li>
       
   </ul>
