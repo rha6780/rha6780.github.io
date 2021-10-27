@@ -1,5 +1,5 @@
 ---
-title: "post0"
+title: "장고를 활용한 rest_framework 구성"
 date: 2021-10-27
 
 categories:
@@ -154,7 +154,7 @@ django-admin startapp "앱 이름"
 
 <br><br>
 
-![Untitled](%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%80%E1%85%A9%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20rest_framework%20%E1%84%80%E1%85%AE%E1%84%89%E1%85%A5%E1%86%BC%204666ff90c8ab463181fb181c6b1f6173/Untitled.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0d1f07b6-9a26-41cb-a0e0-6e596d48ec95/Untitled.png)
 
 이런 식으로 노란 줄이 쳐지는 경우는 해당 경로를 못찾기 때문에 발생하는 경우로,이 경로 설정을 따로 해주어야 정상적으로 작동된다.
 
@@ -196,7 +196,7 @@ print(sys.path)
 
 <br>
 
-![Untitled](%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%80%E1%85%A9%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20rest_framework%20%E1%84%80%E1%85%AE%E1%84%89%E1%85%A5%E1%86%BC%204666ff90c8ab463181fb181c6b1f6173/Untitled%201.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c5a017d3-28cd-4243-a081-6b8d58a71224/Untitled.png)
 
 - 인터프리터가 발견되지 않는 경우
     
@@ -215,13 +215,13 @@ print(sys.path)
 
 <br><br>
 
-![Untitled](%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%80%E1%85%A9%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20rest_framework%20%E1%84%80%E1%85%AE%E1%84%89%E1%85%A5%E1%86%BC%204666ff90c8ab463181fb181c6b1f6173/Untitled%202.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/904a3b54-0379-4d84-acf6-47cc68a0c302/Untitled.png)
 
 아직 데이터베이스 내에 데이터가 없어서 [] 으로 나온다. 해당 테이블에 데이터를 추가하면 api로 받을 수 있다. 이 api를 이용해 데이터를 앱에서 출력하거나 활용할 수 있다. 어드민에서 해당 데이터를 추가할 수 있기 때문에 하나 넣으면...
 
 <br><br>
 
-![Untitled](%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%80%E1%85%A9%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20rest_framework%20%E1%84%80%E1%85%AE%E1%84%89%E1%85%A5%E1%86%BC%204666ff90c8ab463181fb181c6b1f6173/Untitled%203.png)
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0cc34a24-bbe2-43c2-9a1a-c94450ac4b72/Untitled.png)
 
 이런식으로 출력된다.
 
