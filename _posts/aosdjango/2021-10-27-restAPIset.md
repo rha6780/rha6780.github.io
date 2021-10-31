@@ -12,7 +12,7 @@ tags:
 
 <br>
 
-[5 linux에 파이썬 가상 개발 환경 구성하기(Virtual Environments)](https://jungeunlee95.github.io/linux/2019/06/30/5-%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B0%80%EC%83%81-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0(Virtual-Environments)/)
+[>> linux에 파이썬 가상 개발 환경 구성하기(Virtual Environments)](https://jungeunlee95.github.io/linux/2019/06/30/5-%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B0%80%EC%83%81-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0(Virtual-Environments)/)
 
 <br>
 
@@ -51,7 +51,7 @@ python manage.py createsuperuser
 
 <br>
 
-[CMS minibook](https://cms2580.pythonanywhere.com/78/)
+[>> CMS minibook](https://cms2580.pythonanywhere.com/78/)
 
 <br><br>
 
@@ -78,7 +78,7 @@ python manage.py migrate --fake-initial
 pip install mysqlclient
 ```
 
-[mysqlclient-1.4.6-cp36-cp36m-win_amd64.whl is not a supported wheel on this platform. - Google Search](https://www.google.com/search?q=mysqlclient-1.4.6-cp36-cp36m-win_amd64.whl+is+not+a+supported+wheel+on+this+platform.&oq=mysqlclient-1.4.6-cp36-cp36m-win_amd64.whl+is+not+a+supported+wheel+on+this+platform.&aqs=chrome..69i57.410j0j7&sourceid=chrome&ie=UTF-8)
+[>> mysqlclient-1.4.6-cp36-cp36m-win_amd64.whl is not a supported wheel on this platform. 오류 상황](https://www.google.com/search?q=mysqlclient-1.4.6-cp36-cp36m-win_amd64.whl+is+not+a+supported+wheel+on+this+platform.&oq=mysqlclient-1.4.6-cp36-cp36m-win_amd64.whl+is+not+a+supported+wheel+on+this+platform.&aqs=chrome..69i57.410j0j7&sourceid=chrome&ie=UTF-8)
 
 mysqlclient에 대해서 이런 오류가 나온다... 심지어 해당 파일을 다운로드 받아서 설치하려해도 안되기 때문에 pymysql를 사용하기로 했다.
 
@@ -139,7 +139,7 @@ python manage.py migrate --fake
 
 <br>
 
-[Django REST Framework로 API 만들기 & HTML 요소 수집하기](https://blog.nerdfactory.ai/2021/02/24/creating-an-api-&-collecting-html-elements-with-django-rest-framework.html)
+[>> Django REST Framework로 API 만들기 & HTML 요소 수집하기](https://blog.nerdfactory.ai/2021/02/24/creating-an-api-&-collecting-html-elements-with-django-rest-framework.html)
 
 <br>
 
@@ -173,24 +173,23 @@ print(sys.path)
 
 <br>
 
-[Django 예제를 이용한 python import 이해하기](https://cjh5414.github.io/understand-python-import-with-django-example/)
+[>> Django 예제를 이용한 python import 이해하기](https://cjh5414.github.io/understand-python-import-with-django-example/)
 
 <br>
 <br>
 
 라고는 하지만.. 실제로 이걸 어떻게 해야할까... "python.jediEnabled": false 항목이 false면 true로 바꾸면 해결된다고 하는데 만약 없는 경우 아래 링크를 참고하자.
 
-[[파이썬 에러] settings.json에 "python.jediEnabled" : false 가 존재하지 않습니다. (Unknown Configuration Setting : No quick fixes available)](https://0ver-grow.tistory.com/897)
+[>> [파이썬 에러] settings.json에 "python.jediEnabled" : false 가 존재하지 않습니다. 오류 해결하기](https://0ver-grow.tistory.com/897)
 
 <br>
 
 이 경우 Unable to import 에러가 발생할 수 있다..
-
 해결 방법.(아래 링크)
 
 <br>
 
-[VScode에서 import에러 해결한 이야기...](https://slowcode.tistory.com/97)
+[>> VScode에서 import에러 해결한 이야기...](https://slowcode.tistory.com/97)
 
 인터프리터가 기존 환경에 대해서 잡고 있어서 오류가 발생한다. 가상환경을 설치한 경우 인터프리터를 잡아줘야 이런 문제를 해결할 수 있다. .venv 폴더에 python 3.6 ... 으로 잡아주면 아래처럼 해결된다.
 
@@ -202,12 +201,11 @@ print(sys.path)
     
 간혹 Select interpreter not found 와 같은 오류가 나오는 경우가 있는데, 이경우는 현재 vscode와 Extension 버전이 안맞기 때문이다. 따라서 해당 Extension 버전을 몇단계 낮추면 가능해 진다.!
     
-[Visual Studio Code for Python (VSCode Python 개발환경 만들기)](https://www.whatwant.com/entry/Visual-Studio-Code-for-Python-VSCode-Python-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0)
+[>> Visual Studio Code for Python (VSCode Python 개발환경 만들기)](https://www.whatwant.com/entry/Visual-Studio-Code-for-Python-VSCode-Python-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0)
     
 <br><br>
 
 ---
-
 
 <br>
 
