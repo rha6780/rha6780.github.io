@@ -48,7 +48,7 @@ tags:
 
 - 관련 설정
     1. ufw(방화벽) 비활성화, ufw 활성화 후 22번 포트 열기 등 시도 → 해결 X
-    2.  hosts.deny, hosts.allow 파일 수정 → 해결 X
+    2. hosts.deny, hosts.allow 파일 수정 → 해결 X
     3. etc/resolv.conf 파일 수정 → 해결 X
     4. telnet, ping, nc, route 등 통신 확인 → 통신 원활 → But ssh 는 안됨.
 
