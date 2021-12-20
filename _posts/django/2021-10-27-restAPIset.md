@@ -123,7 +123,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-이떄 migrate가 안되고 django.db.utils.OperationalError: (1050, "Table 'django_admin_log' already exists") 등의 오류가 나올 수 있는데, 이런경우 아래와 같은 명령을 사용한다.
+이때 migrate가 안되고 django.db.utils.OperationalError: (1050, "Table 'django_admin_log' already exists") 등의 오류가 나올 수 있는데, 이런경우 아래와 같은 명령을 사용한다. 또는 해당 테이블을 한번 지워보자.
 
 <br><br>
 
