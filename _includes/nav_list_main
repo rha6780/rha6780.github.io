@@ -32,7 +32,7 @@
             </ul>
       </li>
       <li>
-        <span class="nav__sub-title">AOS</span>
+        <span class="nav__sub-title">APP PROJECT</span>
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             <ul>
                 {% for category in site.categories %}
@@ -44,7 +44,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "aosdjango" %}
-                        <li><a href="/categories/aosdjango" class="">AOS_Django ({{category[1].size}})</a></li>
+                        <li><a href="/categories/aosdjango" class="">Django ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "appbasic" %}
+                        <li><a href="/categories/appbasic" class="">APP 이론 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
