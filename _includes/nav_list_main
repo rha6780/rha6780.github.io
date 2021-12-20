@@ -43,8 +43,8 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "aosdjango" %}
-                        <li><a href="/categories/aosdjango" class="">Django ({{category[1].size}})</a></li>
+                    {% if category[0] == "django" %}
+                        <li><a href="/categories/django" class="">Django ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
