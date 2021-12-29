@@ -3,7 +3,7 @@ title: "장고, ui 및 페이지네이션 파일 첨부 및 카테고리"
 date: 2021-12-13
 
 categories:
-  - aosdjango
+  - jejunuproject
 tags:
   - apache
   - django
