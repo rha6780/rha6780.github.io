@@ -9,7 +9,7 @@ tags:
   - math
 ---
 
-# 순열(Permutation) & 조합(Combination)
+### 순열(Permutation) & 조합(Combination)
 
 
 **Permutation** 
