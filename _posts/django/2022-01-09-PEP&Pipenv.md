@@ -147,7 +147,7 @@ PEP8을 정리하는 이유 중 하나는 협업에 있어서 코드를 정해�
 
 ---
 
-<br>
+
 
 **그렇다면 PEP8을 지키면서 코드를 쉽게 작성할 수 있을까?**
 
@@ -192,16 +192,15 @@ pre-commmit uninstall # pre-commit 끔
 
 <br><br>
 
-일단 pre-commit을 끄고, 아래 2가지 파일이 필요하다. .pre-commit-config.yaml 과 pyproject.toml 인데, pyproject.toml은 글자 수 제한이나 검사 제외할 파일을 지정하지 않는다면 필요없다.
+일단 pre-commit을 끄고, .github 디렉토리를 생성 후 그 안에 2가지 파일을 만들자.
+.pre-commit-config.yaml 과 pyproject.toml 인데, pyproject.toml은 글자 수 제한이나 검사하지 않을 파일을 지정하지 않는다면 필요없다.
 
 <br>
 
 가장 중요한 것은 .pre-commit-config.yaml이다. 아래와 같이 지정해두면, python 3.10을 기준으로 black과 flack8을 사용하게 된다.
 
 
-
 <br>
-
 
 
 ``` yaml
