@@ -226,9 +226,13 @@ s.log("created")
 16:31:37: #<Song:0x008f8d91034898> (created)
 ```
 
+<br>
+
 그렇다면 이것이 어떻게 가능한 것일까? 
 
 ![Screen Shot 2022-03-21 at 9.56.18 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f0d68b70-5ce3-4b21-a108-99e7c8e5a740/Screen_Shot_2022-03-21_at_9.56.18_PM.png)
+
+<br>
 
 Test Class에서 Object Class의 특정 모듈을 쓰고 싶은 경우 include 동작은 위 그림과 같다. 위 그림과 같이 Test 클래스의 상위 클래스의 익명 클래스(Anonymous class)가 연결되고 해당 클래스에 우리가 원하는 모듈이 메소드로 연결되는 것이다.
 
@@ -242,6 +246,8 @@ include는 클래스의 상위 클래스로 모듈을 추가하는 방식이기 
 
 include를 이용하면 어떤 인스턴스 메서드를 쓰고 싶을 때, 해당 객체를 만든 후 호출하는 형태를 띈다. 예를 들어 아래와 같다...
 
+<br>
+
 ```jsx
 s = Song.new
 s.log("created")
@@ -249,11 +255,15 @@ s.log("created")
 
 이 경우, Song.log 형태 즉, 클래스 메서드 처럼 쓰지 못한다. 하지만, extend의 경우 상위 클래스로 두는 것이 아닌 아래와 같이 클래스가 연결되어 있는 형태를 띈다.
 
+
 ![Screen Shot 2022-03-21 at 10.12.50 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eceb1131-8a93-46ef-a3ff-8207cef9b057/Screen_Shot_2022-03-21_at_10.12.50_PM.png)
+
 
 이 경우, 해당 클래스의 객체인 Object 싱글턴 클래스가 정의 되어서 Object.new.log 처럼 쓰일 수 있는데, 이를 다시 Song 클래스에서 가져오기 때문에 현재 클래스에서는 Song.log으로 사용할 수 있는 것이다. 즉, 내부적으로 속 뜻은 Object.new.log인데, 해당 Object.new가 Song인 것과 같다. 위의 그림처럼 연결되어서 사용하기 때문이다.
 
+
 해당 그림과 같이 어떤 메스드나 객체에 대해 정의하면, 해당하는 객체의 싱글턴 클래스를 만들고 해당 클래스에 모듈을 include해서 해당 객체에 접근을 할 수 있도록 하는 것이다. 그렇기 때문에 include에서는 인스턴스 메소드만 사용하는 경우가 많고, extend를 사용하면 클래스 메소드를 사용하는 경우가 많다. 
+
 
 이것이 일반적인 특징이기 때문에 아래와 같이 정리한 글이 많았던 것 같다. 이것에 덧붙이면 괄호의 내용과 같은 것 같다.
 
@@ -262,9 +272,13 @@ s.log("created")
 
 ---
 
+<br>
+
 ## Mixin.. Concern!
 
 위에서 설명한 include, extend 의 경우 각각 인스턴스 메소드, 클래스 메소드를 사용할 수 있다는 장점이 있다. 하지만, 해당 코드를 작성하다 보면 한 클래스에 대해 include, extend를 동시에 하고 싶을 수 있다. 이 경우 include, extend를 써도 문제는 없지만, 이 경우 인스턴스 메소드 이자 클래스 메소드가 되기 때문에 좋은 방식은 아니다.
+
+<br>
 
 ### Concern 사용하기
 
