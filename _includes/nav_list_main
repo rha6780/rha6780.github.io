@@ -61,15 +61,15 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "appbasic" %}
-                        <li><a href="/categories/appbasic" class="">APP 이론 ({{category[1].size}})</a></li>
+                    {% if category[0] == "ruby" %}
+                        <li><a href="/categories/ruby" class="">RUBY ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "ruby" %}
-                        <li><a href="/categories/ruby" class="">RUBY ({{category[1].size}})</a></li>
+                    {% if category[0] == "appbasic" %}
+                        <li><a href="/categories/appbasic" class="">APP 이론 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
