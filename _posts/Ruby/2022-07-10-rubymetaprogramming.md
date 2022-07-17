@@ -197,6 +197,7 @@ Dave.class_method_two
 
 이때 우리가 추가한 메소드 들은 클래스 메소드로 Anonymous에 속하게 되고, Class의 객체로 수행이 되는 것이다.
 
+<br>
 ---
 
 ## include, extend 믹스인 살펴보기
