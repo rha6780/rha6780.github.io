@@ -75,7 +75,6 @@ ex)
     B: right
 ```
 <br>
-
 <br>
 
 위 3가지 과정을 가지게 된다. 그러면 이제 A의 첫번째 글자 부터 B의 마지막 글자까지 차례로 확인하면서 연산이 이루어지는게 좋은지 살펴본다.
@@ -98,9 +97,6 @@ ex)
 삭제, 삽입 시, j에 -1를 하는 이유는 for문에서 j++을 하기 때문에 삭제 연산시 다시 비교가 불가능하기 때문에, -1을 해서 삭제 연산 이후 B[j]가 A[i]의 다음 문자와 비교할 수 있게 한다.
 
 <br>
-
----
-
 <br>
 
 JAVA
@@ -109,30 +105,27 @@ JAVA
 
 ```java
 ...
-//visit[]은 방문 여부
-//edge[][]은 근접한 노드 여부
 
-public static void EditDistance(int cur) {
-	String A;
-    String B;
-    int[][] D = new int[A.length()+1][B.length()+1];
+String A;
+String B;
+int[][] D = new int[A.length()+1][B.length()+1];
 
-    for(int i=0; i<=A.length(); i++) {D[i][0] = i;}
-    for(int j=0; j<=B.length(); j++) {D[0][j] = j;}
+for(int i=0; i<=A.length(); i++) {D[i][0] = i;}
+for(int j=0; j<=B.length(); j++) {D[0][j] = j;}
 
-    for(int i=1; i<=A.length(); i++) {
-        for(int j=1; j<=B.length(); j++) {
-            if(A.charAt(i) == B.charAt(j)) {
-                D[i][j] = D[i-1][j-1];
-            }
-            else {
-                D[i][j]=Math.min(Math.min(D[i-1][j-1]+1,D[i-1][j]+1), D[i][j-1]+1)
-            }
+for(int i=1; i<=A.length(); i++) {
+    for(int j=1; j<=B.length(); j++) {
+        if(A.charAt(i) == B.charAt(j)) {
+            D[i][j] = D[i-1][j-1];
+        }
+        else {
+            D[i][j]=Math.min(Math.min(D[i-1][j-1]+1,D[i-1][j]+1), D[i][j-1]+1)
         }
     }
-
-    System.out.println(D[A.length()][B.length()]);
 }
+
+System.out.println(D[A.length()][B.length()]);
+
 ```
 <br><br>
 
