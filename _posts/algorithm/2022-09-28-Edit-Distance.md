@@ -112,20 +112,26 @@ JAVA
 //visit[]은 방문 여부
 //edge[][]은 근접한 노드 여부
 
-public static void BFS(int cur) {
-	Queue<Integer> que = new LinkedList<Integer>();
-	visit[cur] = true;
-	que.add(cur);
+public static void EditDistance(int cur) {
+	String A;
+    String B;
+    int[][] D = new int[A.length()+1][B.length()+1];
 
-	while(!que.isEmpty()) {
-		int t = que.poll();
+    for(int i=0; i<=A.length(); i++) {D[i][0] = i;}
+    for(int j=0; j<=B.length(); j++) {D[0][j] = j;}
 
-		for(int i=0; i<N; i++) {
-			if(visit[i] || !edge[cur][i]) continue;
-			visit[i] = true;
-			que.add(i);
-		}
-	}
+    for(int i=1; i<=A.length(); i++) {
+        for(int j=1; j<=B.length(); j++) {
+            if(A.charAt(i) == B.charAt(j)) {
+                D[i][j] = D[i-1][j-1];
+            }
+            else {
+                D[i][j]=Math.min(Math.min(D[i-1][j-1]+1,D[i-1][j]+1), D[i][j-1]+1)
+            }
+        }
+    }
+
+    System.out.println(D[A.length()][B.length()]);
 }
 ```
 <br><br>
@@ -134,6 +140,6 @@ public static void BFS(int cur) {
 
 ---
 
-[1260번: DFS와 BFS](https://www.acmicpc.net/problem/1260)
+[15483번: 최소 편집](https://www.acmicpc.net/problem/15483)
 
 <br><br>
