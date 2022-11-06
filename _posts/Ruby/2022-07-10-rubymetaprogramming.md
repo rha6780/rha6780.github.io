@@ -113,18 +113,22 @@ Test라는 객체에 value_of_var 메소드를 넣고 싶다면.. self.value_of_
 
 따라서 Test라는 객체 내에 해당 메소드를 위치하여서 Test 클래스 자체 객체에서 호출할 수 있는 메소드를 따로 클래스 메소드라고 부르는 것이지 실제 원리는 인스턴스 메소드와 같다. Test도 결국엔 인스턴스이다...!
 
-- 클래스 메소드로 지정하는 것은 무엇이고 인스턴스 메소드로 지정하는 기준이 있을까?
+
+**클래스 메소드로 지정하는 것은 무엇이고 인스턴스 메소드로 지정하는 기준이 있을까?**
+
+<br>
+
+개인적으로, 클래스를 통해 어떤 객체가 생성되기 때문에 아래와 같은 예시를 들 수 있다.
     
-    개인적으로, 클래스를 통해 어떤 객체가 생성되기 때문에 아래와 같은 예시를 들 수 있다.
-    
-    인간 : 인간은 눈이 두개이다.
-    
-    사라 : 사라는 눈이 갈색이다.
-    
-    세라 : 세라는 눈이 검은색이다.
-    
-    사라와 세라는 둘다 인간으로 눈을 두개가지고 있다. 하지만, 눈 색과 같이 그 객체 고유의 값이 다를 수 있다. 그렇기 때문에 우리가 원하는 객체의 공통적인 특징의 경우 클래스 메소드로 지정하고, 객체 각각 고유의 특징은 인스턴스 메소드로 구분하는 것이다.
-    
+인간 : 인간은 눈이 두개이다.
+사라 : 사라는 눈이 갈색이다.
+세라 : 세라는 눈이 검은색이다.
+
+<br>
+
+사라와 세라는 둘다 인간으로 눈을 두개가지고 있다. 하지만, 눈 색과 같이 그 객체 고유의 값이 다를 수 있다. 그렇기 때문에 우리가 원하는 객체의 공통적인 특징의 경우 클래스 메소드로 지정하고, 객체 각각 고유의 특징은 인스턴스 메소드로 구분하는 것이다.
+
+<br>
 
 **요약**
 
@@ -133,7 +137,8 @@ Test라는 객체에 value_of_var 메소드를 넣고 싶다면.. self.value_of_
 - class Test 아래에 선언한 코드들은 Test객체가 생성한 객체에 대한 구조와 메소드를 선언한 것
 - Test객체의 메소드는 Class의 메소드를 가지고 있고, 따로 추가하려면 self를 통해 Test라는 객체에 넣는 방식이 있다.
 
----
+<br>
+
 
 ## 싱글턴 메소드
 
@@ -146,15 +151,24 @@ puts animal.upcase
 => CAT
 ```
 
+<br>
+
 평범하게 위와 같이 코드를 작성한 경우에도 싱글턴 메소드가 사용된다. animal = “cat”이라는 객체를 생성했는데.. 우리가 선언하지 않은 upcase 메소드를 이용해서 CAT이라는 결과를 출력했다..!
 
-![Screen Shot 2022-03-21 at 10.15.11 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c6b4b305-cd6d-40b6-be26-3722be6ba7ae/Screen_Shot_2022-03-21_at_10.15.11_PM.png)
+<img width="588" alt="Screen Shot 2022-03-21 at 10 15 11 PM" src="https://user-images.githubusercontent.com/47859845/200164418-e05bff1f-1b96-44f2-b1bf-5b32cc5e1e4b.png">
+
+
+<br>
+
 
 MBTI가 S라 그런지 그런갑다 하고 넘어가려 했지만, 알고보니 구조가 있는 것이었다. animal에서 cat이라는 객체를 생성한 후, String의 특성을 그대로 물려받는다. 즉, Animal.Cat은 String을 클래스로 받기 때문에 String객체에 있는 Uppercase 메소드를 사용한 것이다. (String도 Object를 상속받는 객체이다.)
 
-![Screen Shot 2022-03-21 at 10.20.24 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d31db096-aed1-4770-8fe6-052e2aa8c8f2/Screen_Shot_2022-03-21_at_10.20.24_PM.png)
+
+<img width="654" alt="Screen Shot 2022-03-21 at 10 20 24 PM" src="https://user-images.githubusercontent.com/47859845/200164438-21b1da3e-9d00-4e8d-ac3e-84eb5dd247ef.png">
 
 이렇게 객체를 선언할 때 익명 클래스를 생성하고 연결하게 되는데, 이를 고유 클래스(eigenclass) 또는 싱글턴 클래스라 한다. 
+
+<br>
 
 ```ruby
 animal = "cat"
@@ -191,13 +205,22 @@ Dave.class_method_two
 
 만약 위에서 설명한 인스턴스 메소드, 클래스 메소드에 대해서 이해가 잘 안된다면, 이번 익명 클래스가 어떻게 되는지 살펴보면서 그 차이점을 확인하자.
 
-우선 클래스 메소드가 위 코드처럼 추가되면.... 아래와 같은 구조를 가진다. self를 설명하면서 class 라는 것도 Class의 객체라는 것을 이야기했다. 클래스 메소드는 이러한 class 객체에 메소드를 정의한 것으로, Dave.log 등 따로 인스턴스를 생성하지 않고 사용할 수 있다. 이미 class라는 객체에 메소드가 선언 되어있기 때문이다!
+<br>
 
-![Screen Shot 2022-03-21 at 10.30.53 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9d425f5f-8980-44f9-baef-641b2758678b/Screen_Shot_2022-03-21_at_10.30.53_PM.png)
+우선 클래스 메소드가 위 코드처럼 추가되면.... 아래와 같은 구조를 가진다. self를 설명하면서 class 라는 것도 Class의 객체라는 것을 이야기했다.
+
+<br>
+
+클래스 메소드는 이러한 class 객체에 메소드를 정의한 것으로, Dave.log 등 따로 인스턴스를 생성하지 않고 사용할 수 있다. 이미 class라는 객체에 메소드가 선언 되어있기 때문이다!
+
+
+<img width="598" alt="Screen Shot 2022-03-21 at 10 30 53 PM" src="https://user-images.githubusercontent.com/47859845/200164519-e4c332df-28c5-43f6-8597-2f50d8f0159b.png">
+
 
 이때 우리가 추가한 메소드 들은 클래스 메소드로 Anonymous에 속하게 되고, Class의 객체로 수행이 되는 것이다.
 
 <br>
+
 ---
 
 ## include, extend 믹스인 살펴보기
@@ -231,7 +254,7 @@ s.log("created")
 
 그렇다면 이것이 어떻게 가능한 것일까? 
 
-![Screen Shot 2022-03-21 at 9.56.18 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f0d68b70-5ce3-4b21-a108-99e7c8e5a740/Screen_Shot_2022-03-21_at_9.56.18_PM.png)
+<img width="511" alt="Screen Shot 2022-03-21 at 9 56 18 PM" src="https://user-images.githubusercontent.com/47859845/200164643-b9e60371-380b-4437-8909-bf72c49249ac.png">
 
 <br>
 
@@ -257,13 +280,22 @@ s.log("created")
 이 경우, Song.log 형태 즉, 클래스 메서드 처럼 쓰지 못한다. 하지만, extend의 경우 상위 클래스로 두는 것이 아닌 아래와 같이 클래스가 연결되어 있는 형태를 띈다.
 
 
-![Screen Shot 2022-03-21 at 10.12.50 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eceb1131-8a93-46ef-a3ff-8207cef9b057/Screen_Shot_2022-03-21_at_10.12.50_PM.png)
+
+<img width="791" alt="Screen Shot 2022-03-21 at 10 12 50 PM" src="https://user-images.githubusercontent.com/47859845/200164665-c54109ae-0133-4778-bda4-c45e51cd048f.png">
 
 
-이 경우, 해당 클래스의 객체인 Object 싱글턴 클래스가 정의 되어서 Object.new.log 처럼 쓰일 수 있는데, 이를 다시 Song 클래스에서 가져오기 때문에 현재 클래스에서는 Song.log으로 사용할 수 있는 것이다. 즉, 내부적으로 속 뜻은 Object.new.log인데, 해당 Object.new가 Song인 것과 같다. 위의 그림처럼 연결되어서 사용하기 때문이다.
+이 경우, 해당 클래스의 객체인 Object 싱글턴 클래스가 정의 되어서 Object.new.log 처럼 쓰일 수 있는데, 이를 다시 Song 클래스에서 가져오기 때문에 현재 클래스에서는 Song.log으로 사용할 수 있는 것이다. 
+
+<br>
+
+즉, 내부적으로 속 뜻은 Object.new.log인데, 해당 Object.new가 Song인 것과 같다. 위의 그림처럼 연결되어서 사용하기 때문이다.
+
+<br>
+
+해당 그림과 같이 어떤 메스드나 객체에 대해 정의하면, 해당하는 객체의 싱글턴 클래스를 만들고 해당 클래스에 모듈을 include해서 해당 객체에 접근을 할 수 있도록 하는 것이다. 
 
 
-해당 그림과 같이 어떤 메스드나 객체에 대해 정의하면, 해당하는 객체의 싱글턴 클래스를 만들고 해당 클래스에 모듈을 include해서 해당 객체에 접근을 할 수 있도록 하는 것이다. 그렇기 때문에 include에서는 인스턴스 메소드만 사용하는 경우가 많고, extend를 사용하면 클래스 메소드를 사용하는 경우가 많다. 
+그렇기 때문에 include에서는 인스턴스 메소드만 사용하는 경우가 많고, extend를 사용하면 클래스 메소드를 사용하는 경우가 많다. 
 
 
 이것이 일반적인 특징이기 때문에 아래와 같이 정리한 글이 많았던 것 같다. 이것에 덧붙이면 괄호의 내용과 같은 것 같다.
@@ -271,13 +303,17 @@ s.log("created")
 - include = 인스턴스 메소드 가져오기 (상속 연결-체인)
 - extend = 클래스 메소드 가져오기 (싱글톤 클래스 확장)
 
----
-
 <br>
+
+---
 
 ## Mixin.. Concern!
 
-위에서 설명한 include, extend 의 경우 각각 인스턴스 메소드, 클래스 메소드를 사용할 수 있다는 장점이 있다. 하지만, 해당 코드를 작성하다 보면 한 클래스에 대해 include, extend를 동시에 하고 싶을 수 있다. 이 경우 include, extend를 써도 문제는 없지만, 이 경우 인스턴스 메소드 이자 클래스 메소드가 되기 때문에 좋은 방식은 아니다.
+
+
+위에서 설명한 include, extend 의 경우 각각 인스턴스 메소드, 클래스 메소드를 사용할 수 있다는 장점이 있다. 
+
+하지만, 해당 코드를 작성하다 보면 한 클래스에 대해 include, extend를 동시에 하고 싶을 수 있다. 이 경우 include, extend를 써도 문제는 없지만, 이 경우 인스턴스 메소드 이자 클래스 메소드가 되기 때문에 좋은 방식은 아니다.
 
 <br>
 
@@ -301,7 +337,9 @@ module TestModule
 end
 ```
 
-이렇게 사용하면 included에 넣은 scope, class methods 등을 지정한 것 처럼 사용할 수 있다. 이렇게 작성한 TestModule을 원하는 클래스에 include해서 사용하면 된다.
+이렇게 사용하면 included에 넣은 scope, class methods 등을 지정한 것 처럼 사용할 수 있다. 
+
+이렇게 작성한 TestModule을 원하는 클래스에 include해서 사용하면 된다.
 
 ```ruby
 class RunnigTest
@@ -309,7 +347,9 @@ class RunnigTest
 end
 ```
 
-개발하는 입장에서 중요한 것은 extend한 모듈을 더 안정적이게 include 할 수 있는 방식이라고 생각하면 쉽다. 루비에서 메타 프로그래밍이란, 위에서 설명한 self, include, extend 등으로 각각 고유의 객체를 가지고 메타 클래스를 이용해서 프로그래밍하는 기법을 의미한다...!
+개발하는 입장에서 중요한 것은 extend한 모듈을 더 안정적이게 include 할 수 있는 방식이라고 생각하면 쉽다. 
+
+루비에서 메타 프로그래밍이란, 위에서 설명한 self, include, extend 등으로 각각 고유의 객체를 가지고 메타 클래스를 이용해서 프로그래밍하는 기법을 의미한다...!
 
 - 참고 자료
     
