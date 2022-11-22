@@ -1,10 +1,10 @@
 ---
-title: "대학프로젝트"
+title: "개인 프로젝트"
 layout: archive
-permalink: categories/jejunuproject
+permalink: categories/personalproject
 author_profile: true
 sidebar_main: true
 ---
 
-{% assign posts = site.categories.jejunuproject %}
+{% assign posts = site.categories.personalproject %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

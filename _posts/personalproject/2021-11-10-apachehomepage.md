@@ -3,7 +3,7 @@ title: "[중간문제] Apache 와 연구실 서버.."
 date: 2021-11-10
 
 categories:
-  - jejunuproject
+  - personalproject
 tags:
   - apache
   - django

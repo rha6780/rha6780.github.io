@@ -3,7 +3,7 @@ title: "홈페이지 돌려줘요... 우리 서버란 말이에요."
 date: 2021-11-26
 
 categories:
-  - jejunuproject
+  - personalproject
 tags:
   - apache
   - django
