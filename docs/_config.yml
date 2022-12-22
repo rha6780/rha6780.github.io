@@ -281,7 +281,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-code-tabs
+  # - jekyll-code-tabs
 
 # Enable safe mode
 safe: true
@@ -294,7 +294,7 @@ whitelist:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-code-tabs
+  # - jekyll-code-tabs
 
 
 # Archives

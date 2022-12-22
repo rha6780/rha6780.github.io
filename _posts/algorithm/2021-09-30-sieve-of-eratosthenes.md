@@ -22,9 +22,6 @@ tags:
 
 <br>
 
-{% codetabs %}
-
-{% codetab Java %}
 ```java
 ...
 
@@ -39,16 +36,6 @@ public static void SE(int a) {
 	return isprime;
 }
 ```
-{% endcodetab %}
-
-{% codetab Python %}
-```python
-...
-준비중
-```
-{% endcodetab %}
-
-{% endcodetabs %}
 
 <br><br>
 추천문제
