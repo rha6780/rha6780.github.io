@@ -42,7 +42,7 @@ public static void SE(int a) {
 {% endcodetab %}
 
 {% codetab Python %}
-```java
+```python
 ...
 준비중
 ```
