@@ -6,7 +6,7 @@ div.highlighter-rouge,
 figure.highlight {
   position: relative;
   margin-bottom: 1em;
-  background: $base06;
+  background: $base00; //코드 블록 color
   font-family: $monospace;
   font-size: $type-size-7;
   line-height: 1.8;
@@ -34,7 +34,7 @@ figure.highlight {
     &.rouge-gutter {
       padding-right: 1em;
       width: 1em;
-      color: $base00; //코드 블록 color
+      color: $base00; //테이블 블록 color
       border-right: 1px solid $base04;
       text-align: right;
     }
