@@ -6,7 +6,7 @@ div.highlighter-rouge,
 figure.highlight {
   position: relative;
   margin-bottom: 1em;
-  background: $link-color;
+  background: $base06;
   font-family: $monospace;
   font-size: $type-size-7;
   line-height: 1.8;
@@ -34,7 +34,7 @@ figure.highlight {
     &.rouge-gutter {
       padding-right: 1em;
       width: 1em;
-      color: $base04;
+      color: $base00; //코드 블록 color
       border-right: 1px solid $base04;
       text-align: right;
     }
@@ -172,7 +172,7 @@ figure.highlight {
   }
   .na {
     /* Name.Attribute */
-    color: $base0d;
+    color: $base0c;
   }
   .nb {
     /* Name.Builtin */
@@ -180,11 +180,11 @@ figure.highlight {
   }
   .nc {
     /* Name.Class */
-    color: $base05;
+    color: #4b809b;
   }
   .no {
     /* Name.Constant */
-    color: $base05;
+    color: $base0d;
   }
   .nd {
     /* Name.Decorator */
