@@ -1,11 +1,11 @@
 ---
 title: "변수와 연산자"
-date: 2021-12-29
+date: 2023-03-11
 
 categories:
-  - OS
+  - python
 tags:
-  - OS
+  - python
 ---
 # 변수와 연산자
 
