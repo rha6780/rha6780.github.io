@@ -1,5 +1,5 @@
 ---
-title: "Beakjoon_JAVA"
+title: "Beakjoon"
 layout: archive
 permalink: categories/beakjoon
 author_profile: true
