@@ -7,6 +7,7 @@ sidebar_main: true
 ---
 
 {% assign posts = site.categories.appbasic %}
-{% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
+{% for post in posts %} 
+    {% include archive-single2.html type=page.entries_layout %}
+{% endfor %}
 
-{% include paginator.html %}

@@ -7,6 +7,6 @@ sidebar_main: true
 ---
 
 {% assign posts = site.categories.Terraform %}
-{% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
-
-{% include paginator.html %}
+{% for post in posts %} 
+    {% include archive-single2.html type=page.entries_layout %}
+{% endfor %}
