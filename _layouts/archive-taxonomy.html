@@ -15,6 +15,12 @@ author_profile: false
   {% endunless %}
 {% endif %}
 
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
 <div id="main" role="main">
   {% include sidebar.html %}
 
@@ -25,5 +31,7 @@ author_profile: false
     {% for post in page.posts %}
       {% include archive-single2.html %}
     {% endfor %}
+
+    {% include paginator.html %}
   </div>
 </div>
