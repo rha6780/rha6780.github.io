@@ -12,6 +12,9 @@ sidebar_main: true
   {% assign posts = site.categories.beakjoon %}
 {% endif %}
 
-{% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+{% for post in posts %} 
+    {% include archive-single2.html type=page.entries_layout %}
+{% endfor %}
 
 {% include paginator.html %}
