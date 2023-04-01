@@ -9,7 +9,7 @@ sidebar_main: true
 {% if paginator %}
   {% assign posts = paginator.posts %}
 {% else %}
-  {% assign posts = site.categories.beakjoon.posts %}
+  {% assign posts = site.categories.beakjoon %}
 {% endif %}
 
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
