@@ -16,6 +16,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                {% if category[0] == "shell" %}
+                <li><a href="/categories/shell" class="">Shell ({{category[1].size}})</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                 {% if category[0] == "AWS" %}
                 <li><a href="/categories/AWS" class="">AWS ({{category[1].size}})</a></li>
                 {% endif %}
