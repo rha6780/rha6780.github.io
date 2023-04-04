@@ -147,7 +147,7 @@
 .author__content {
   display: table-cell;
   vertical-align: top;
-  margin-top: 20px;
+  margin-top: 10px;
   padding-left: 15px;
   padding-right: 25px;
   line-height: 1;
@@ -169,7 +169,7 @@
   margin: 0;
 
   @include breakpoint($large) {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
 }
@@ -190,7 +190,7 @@
 
 .custom-link {
   border-bottom: 1px solid $border-color;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   a {
     font-size: 15px;
     margin-bottom: 10px;
