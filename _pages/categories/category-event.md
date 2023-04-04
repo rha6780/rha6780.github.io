@@ -1,5 +1,5 @@
 ---
-title: "event"
+title: "Event"
 layout: archive
 permalink: categories/event
 author_profile: true
