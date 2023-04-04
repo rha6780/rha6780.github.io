@@ -1,6 +1,6 @@
 ---
-title: "bash 문법"
-date: 2023-04-01
+title: "변수 선언과 함수"
+date: 2023-04-02
 
 categories:
   - shell
