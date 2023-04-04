@@ -3,9 +3,9 @@ title: "Docker 구조와 인프라"
 date: 2022-02-06
 
 categories:
-  - OS
+  - docker
 tags:
-  - OS
+  - docker
 ---
 
 **Docker를 쓰기전에… 알아가기**
