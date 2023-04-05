@@ -1,11 +1,12 @@
 ---
-title: "ActiveRecord 란?"
+title: "[Rails] ActiveRecord 란?"
 date: 2023-04-04
 
 categories:
   - ruby
 tags:
   - ruby
+  - rails
 ---
 
 ## 소개

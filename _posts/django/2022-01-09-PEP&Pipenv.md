@@ -153,36 +153,25 @@ PEP8을 정리하는 이유 중 하나는 협업에 있어서 코드를 정해�
 
 <br>
 
-이에 관한 문제를 black, flake8을 이용해 해결할 수 있다.
+이에 관한 문제를 black, flake8을 이용해 해결할 수 있다. black과 flake8은 쉽게 말해 코드가 PEP8을 잘 따랐는지 확인하는 패키지이다. 이를 적용하면 우리가 작성한 코드 중 고쳐야 하는 부분을 알려주는데....
 
-
-black과 flake8은 쉽게 말해 코드가 PEP8을 잘 따랐는지 확인하는 패키지이다. 이를 적용하면 우리가 작성한 코드 중 고쳐야 하는 부분을 알려주는데....
-
-<br>
 
 > "잠깐... 그럼 우리가 일일히 black이랑 flake8을 돌려야 하나..? 귀찮은데.."
 
-<br>
 
 물론, 일일히 돌리는 것은 매우 귀찮다. 그렇기 때문에 협업 프로세스에서 우리가 원하는 시점에 검사만 하면 얼마나 좋을까..?!
 
 <br>
 
-이를 도와주는 것이 pre-commit 이다.
-
-pre-commit은 말 그대로 commit 하기 전으로, black과 flake8을 pre-commit에 설정해두면 커밋 전에 코드를 검사하고 알려준다.
+이를 도와주는 것이 pre-commit 이다. pre-commit은 말 그대로 commit 하기 전으로, black과 flake8을 pre-commit에 설정해두면 커밋 전에 코드를 검사하고 알려준다.
 
 
-<br>
-
-본격적으로 한번 pre-commit 구성과 black, flake8을 적용하자.
-
-우선, brew, pip install 을 통해 pre-commit, black, flake8을 받아두자. 가상환경이 있다면 터미널에서 명령어를 사용해 해당 가상환경에서 pre-commit, black, flacke8(선택사항)을 다운하자.
+본격적으로 한번 pre-commit 구성과 black, flake8을 적용하자. 우선, brew, pip install 을 통해 pre-commit, black, flake8을 받아두자. 가상환경이 있다면 터미널에서 명령어를 사용해 해당 가상환경에서 pre-commit, black, flacke8(선택사항)을 다운하자.
 
 <br>
 아래는 pipenv를 기준으로 작성하였다.
 
-``` python
+``` shell
 pipenv install pre-commit
 pipenv install black
 
@@ -192,12 +181,7 @@ pre-commmit uninstall # pre-commit 끔
 
 <br><br>
 
-일단 pre-commit을 끄고, .github 디렉토리를 생성 후 그 안에 2가지 파일을 만들자.
-.pre-commit-config.yaml 과 pyproject.toml 인데, pyproject.toml은 글자 수 제한이나 검사하지 않을 파일을 지정하지 않는다면 필요없다.
-
-<br>
-
-가장 중요한 것은 .pre-commit-config.yaml이다. 아래와 같이 지정해두면, python 3.10을 기준으로 black과 flack8을 사용하게 된다.
+일단 pre-commit을 끄고, .github 디렉토리를 생성 후 그 안에 2가지 파일을 만들자. .pre-commit-config.yaml 과 pyproject.toml 인데, pyproject.toml은 글자 수 제한이나 검사하지 않을 파일을 지정하지 않는다면 필요없다. 가장 중요한 것은 .pre-commit-config.yaml이다. 아래와 같이 지정해두면, python 3.10을 기준으로 black과 flack8을 사용하게 된다.
 
 
 <br>

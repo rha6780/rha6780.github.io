@@ -1,5 +1,5 @@
 ---
-title: "연산자"
+title: "[Python] 연산자"
 date: 2023-03-11
 
 categories:

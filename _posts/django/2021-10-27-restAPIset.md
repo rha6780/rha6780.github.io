@@ -23,7 +23,7 @@ vscode 에 ssh 연결로 리눅스 환경으로 들어간 뒤 장고 구현을 �
 
 <br>
 
-```java
+```shell
 pip3 install virtualenv
 virtualenv .venv
 source .venv/bin/activate
@@ -33,7 +33,7 @@ source .venv/bin/activate
 
 <br><br>
 
-```java
+```shell
 pip install django
 
 django-admin startproject "프로젝트 이름"
@@ -43,7 +43,7 @@ django-admin startproject "프로젝트 이름"
 
 <br><br>
 
-```java
+```shell
 python manage.py createsuperuser
 ```
 
@@ -55,7 +55,7 @@ python manage.py createsuperuser
 
 <br><br>
 
-```java
+```shell
 mysql 접속
 select * from django-migrations;
 truncate table django-migrations;
@@ -74,7 +74,7 @@ python manage.py migrate --fake-initial
 
 <br><br>
 
-```java
+```shell
 pip install mysqlclient
 ```
 
@@ -88,7 +88,7 @@ mysqlclient에 대해서 이런 오류가 나온다... 심지어 해당 파일�
 <br>
 
 
-```java
+```shell
 pip install pymysql
 ```
 
@@ -96,7 +96,7 @@ pip install pymysql
 
 <br><br>
 
-```java
+```python
 import pymysql
 pymysql.install_as_MYSQLdb()
 
@@ -118,7 +118,7 @@ DATABASES = {
 
 <br><br>
 
-```java
+```shell
 python manage.py makemigrations
 python manage.py migrate
 ```
@@ -127,7 +127,7 @@ python manage.py migrate
 
 <br><br>
 
-```java
+```shell
 python manage.py migrate --fake
 ```
 
@@ -143,7 +143,7 @@ python manage.py migrate --fake
 
 <br>
 
-```java
+```shell
 pip install djangorestframework
 pip install django-filter
 
@@ -228,7 +228,7 @@ print(sys.path)
 
 장고 초기설정이 아니라 개발환경 조성시에는 가상환경에서
 
-```python
+```shell
 pip install -r requirements.txt
 ```
 

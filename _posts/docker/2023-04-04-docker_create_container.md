@@ -38,7 +38,7 @@ tags:
 
 아무튼 확인 되었다면, 컨테이너를 실행시켜야 한다.
 
-```ruby
+```shell
 docker run --name [컨테이너 이름] -p [호스트 포트:컨테이너 포트] [이미지 이름]
 
 docker run --name 임의의 이름 -p 5432:5432 postgres
@@ -62,7 +62,7 @@ docker run --name 임의의 이름 -p 5432:5432 postgres
 여기서 나는 postgres의 이미지를 사용했는데 이는 DB이기 때문에 초기에 슈퍼유저 세팅이 필요로 한다.
 이처럼 pull 한 이미지 환경은 각각 컨테이너 생성 시 조건이 있을 수 있으니 pull 전에 공식문서를 정독하자.
 
-```ruby
+```shell
 docker run --name postgres_db -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 ```
 
@@ -86,13 +86,13 @@ docker ps로 postgres_db라는 이름의 컨테이너를 확인할 수 있다.
 
 원하는 경로에서...
 
-```ruby
+```shell
 vi Dockerfile
 ```
 
 직접 이미지를 작성하는 경우 Dockerfile이라는 이름의 파일을 생성하고, 그 안에 우리가 원하는 환경에 대해 작성하면 된다.
 
-```ruby
+```docker
 FROM postgres:13.1
 
 RUN 어쩌구 저쩌구...
@@ -120,7 +120,7 @@ RUN 어쩌구 저쩌구...
 
 여기까지 각 속성이 무슨 역할을 하는지 간단히 살펴보았다. 해당 내용을 통해 간단히 이미지를 빌드해보자. 우선 어플리케이션을 위해 간단한 파일을 생성하자.
 
-```ruby
+```python
 # test.py 파일
 print("테스트 실행")
 ```
@@ -136,7 +136,7 @@ Workdir의 경우 현재 Dockerfile 위치에서 실제 빌드되는 환경(컨�
 
 대충 이런식으로 작성하면 build 명령어를 통해 이미지 이름과 경로를 적어 빌드한다.
 
-```ruby
+```shell
 docker build -t [이미지 이름] 경로
 
 docker build -t python_docker .
@@ -149,7 +149,7 @@ docker build -t python_docker .
 
 <br>
 
-```ruby
+```shell
 docker images
 ```
 
@@ -159,7 +159,7 @@ docker images
 
 <br>
 
-```ruby
+```shell
 docker run python_docker
 ```
 
@@ -172,7 +172,7 @@ docker run python_docker
 
 - 컨테이너 실행
     
-    ```ruby
+    ```shell
     docker run --name python_container -d python_docker
     ```
 
@@ -199,7 +199,7 @@ docker-compose는 리눅스가 아닌 환경에서는 공식홈페이지 혹은 
 
 여러 컨테이너, 이미지를 관리하기 때문에 여러가지 옵션과 필드를 지정한다. 일반적으로 docker-compose.yml은 프로젝트 최상위에 위치시킨다. 우선 compose로 구성할 수 있는 서비스 중 DB를 먼저 생각하고 구성해보자. docker-compose를 이용해 [postgres DB 환경을 구성](https://github.com/docker/compose)해보자.
 
-```ruby
+```yaml
 version: '3.1'
 
 services:
@@ -221,7 +221,7 @@ postgres에서는 postgres 라는 default로 이름을 root로 지정해두어�
 
 **예시**
 
-```ruby
+```yaml
 version: "3.9"  # optional since v1.27.0
 services:
 	web:
@@ -258,7 +258,7 @@ build는 해당 서비스의 dockerfile(이미지)을 빌드하기 위한 경로
 
 데이터 베이스 등의 애플리케이션은 postgres와 같은 이미지를 주로 내려받는다. image는 어떤 db를 pull 할지 작성한다.
 
-```ruby
+```yaml
 services:
 	db:
 		image: postgres
@@ -270,7 +270,7 @@ services:
 
 ports는 이름처럼 호스트와 컨테이너의 포트를 매핑, 바인딩(포트 포워딩)에 사용이 된다.
 
-```ruby
+```yaml
 services:
   db:
     image: postgres
@@ -311,7 +311,7 @@ services:
 
 environment는 환경변수를 설정할 때 사용된다. db와 같은 경우 접속하기 위해 id, password를 지정해야하는데 다음처럼 지정하여서 사용할 수 있다.
 
-```ruby
+```yaml
 services:
   db:
     image: postgres
@@ -327,7 +327,7 @@ services:
 
 command의 경우 compose 수행시 실행될 커맨드를 수행한다. 아래 처럼 수행할 수 있다.
 
-```ruby
+```yaml
 services:
 	foo:
 		image: busybox
@@ -342,7 +342,7 @@ services:
 
 서비스 컨테이너가 사용할 네트워크를 지정한다. 만약 최상위에 네트워크 키를 설정해서 편리하게 이용할 수 있다.
 
-```ruby
+```yaml
 services:
   frontend:
     image: awesome/webapp
@@ -370,7 +370,7 @@ networks:
 
 예시로 해당 docker-compose.yml 파일을 생성하였다.
 
-```ruby
+```yaml
 services:
   db:
     image: postgres

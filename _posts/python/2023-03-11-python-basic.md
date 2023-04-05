@@ -1,5 +1,5 @@
 ---
-title: "변수 선언"
+title: "[Python] 변수 선언"
 date: 2023-03-11
 
 categories:

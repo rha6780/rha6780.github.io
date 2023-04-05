@@ -1,5 +1,5 @@
 ---
-title: "Ruby Meta 프로그래밍 이해하기"
+title: "[Ruby] Meta 프로그래밍 이해하기"
 date: 2022-07-16
 
 categories:

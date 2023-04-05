@@ -1,5 +1,5 @@
 ---
-title: "홈페이지 돌려줘요... 우리 서버란 말이에요."
+title: "[CPS-HOME] 홈페이지 돌려줘요... 우리 서버란 말이에요."
 date: 2021-11-26
 
 categories:
@@ -7,6 +7,7 @@ categories:
 tags:
   - apache
   - django
+  - cps-home
 ---
 
 # 우리 서버란 말이에요... ㅠㅠ

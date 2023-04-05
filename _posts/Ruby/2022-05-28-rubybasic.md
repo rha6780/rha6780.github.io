@@ -1,5 +1,5 @@
 ---
-title: "Ruby 기초 문법"
+title: "[Ruby] 기초 문법"
 date: 2022-07-16
 
 categories:
