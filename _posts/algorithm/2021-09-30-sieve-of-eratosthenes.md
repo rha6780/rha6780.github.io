@@ -38,7 +38,8 @@ public static void SE(int a) {
 ```
 
 <br><br>
-추천문제
+
+**추천문제**
 
 ---
 

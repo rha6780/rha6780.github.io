@@ -68,23 +68,23 @@ Tree = new int[Treesize];
 
 <br>
 
-1. 트리 그리기 및 초기화
+### 1. 트리 그리기 및 초기화
 
 ```java
-	public static void makeTree(int left, int right, int node){
-		if(left==right){Tree[node]=left;}
-		else{
-		int mid=(left+right)/2;
-		makeTree(left, mid, node*2);
-		makeTree(mid+1, right, node*2+1);
-		if(arr[Tree[node*2]]<arr[Tree[node*2+1]]){
-			Tree[node]=Tree[node*2];
-		}
-		else{
-			Tree[node]=Tree[node*2+1];
-		}
-		}
+public static void makeTree(int left, int right, int node){
+	if(left==right){Tree[node]=left;}
+	else{
+	int mid=(left+right)/2;
+	makeTree(left, mid, node*2);
+	makeTree(mid+1, right, node*2+1);
+	if(arr[Tree[node*2]]<arr[Tree[node*2+1]]){
+		Tree[node]=Tree[node*2];
 	}
+	else{
+		Tree[node]=Tree[node*2+1];
+	}
+	}
+}
 ```
 
 트리는 이분매칭과 비슷하게 진행된다.  위에서 설명한데로 문제의 목적에 따라서 부모노드가 결정된다.
@@ -114,36 +114,32 @@ Tree[node]=Tree[node*2]+arr[Tree[node*2+1]];
 
 ```
 
----
 
-<br>
-
-2. 원하는 값 구하기.
+### 2. 원하는 값 구하기.
 
 ```java
-	public static int query(int s, int e, int i, int j, int node){
-		if(e<i||s>j)return -1;
-		else if(i<=s&&e<=j) return Tree[node];
-		int mid=(s+e)/2;
-		int lquery=query(s,mid, i, j,node*2);
-		int rquery=query(mid+1,e,i,j,node*2+1);
-		if(lquery==-1){
-			return rquery;
-		}
-		else if(rquery==-1) return lquery;
-		else if(arr[lquery]<arr[rquery]) return lquery;
-		else return rquery;
-		
+public static int query(int s, int e, int i, int j, int node){
+	if(e<i||s>j)return -1;
+	else if(i<=s&&e<=j) return Tree[node];
+	int mid=(s+e)/2;
+	int lquery=query(s,mid, i, j,node*2);
+	int rquery=query(mid+1,e,i,j,node*2+1);
+	if(lquery==-1){
+		return rquery;
 	}
+	else if(rquery==-1) return lquery;
+	else if(arr[lquery]<arr[rquery]) return lquery;
+	else return rquery;
+	
+}
 ```
 
 트리가 구성되면, 해당 트리에 범위를 넘지 않는 선에서 원하는 값이 있는지 확인해야한다. 각 이분탐색으로... 왼쪽, 오른쪽 자식노드로 이동하면서 원하는 값이 있는지 탐색한다.
 
 <br>
 
----
 
-3. 값 바꾸기
+### 3. 값 바꾸기
 
 ```java
 public static long update(int s, int e, int node, int index, int diff){
@@ -160,9 +156,8 @@ s와 e는 각각 start, end의 변수로 변경되는 범위를 나타낸다. �
 
 <br>
 
----
 
-4. 게으른 갱신
+### 4. 게으른 갱신
 
 ```java
 public void update_lazy(int node, int begin, int end) {
@@ -198,7 +193,7 @@ public void update_range(int node, int begin, int end, int left, int right, int 
 
 <br><br>
 
-추천문제
+**추천문제**
 
 어려운 문제이기 때문에 해당 문제와 함께 코드 설명을 올린다. 위에서 설명한 코드도 이 문제의 코드로 설명을 했다.
 
