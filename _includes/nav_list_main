@@ -3,12 +3,12 @@
 <nav class="nav__list">
     <li>
         {% assign category = site.categories.event %}
-        <li><a href="/categories/event" class="">🗓️ Event ({{category.size}})</a></li>
+    <li><a href="/categories/event" class="">🗓️ Event ({{category.size}})</a></li>
     </li>
     <input id="ac-toc" name="accordion-toc" type="checkbox" />
     <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
     <ul class="nav__items" id="category_tag_menu">
-        
+
         <li>
             <span class="nav__sub-title">이론</span>
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="/categories/os" class="">OS/운영체제 ({{category.size}})</a></li>
             </ul>
-        <!-- 
+            <!-- 
             {% assign category = site.categories.network %}
             <ul>
                 <li><a href="/categories/network" class="">네트워크 ({{category.size}})</a></li>
@@ -44,7 +44,7 @@
             <ul>
                 <li><a href="/categories/algorithm" class="">Algorithm_JAVA ({{category.size}})</a></li>
             </ul>
-            {% assign category = site.categories.beakjoon %}    
+            {% assign category = site.categories.beakjoon %}
             <ul>
                 <li><a href="/categories/beakjoon" class="">Beakjoon ({{category.size}})</a></li>
             </ul>
@@ -60,8 +60,8 @@
             {% assign category = site.categories.docker %}
             <ul>
                 <li><a href="/categories/docker" class="">Docker({{category.size}})</a></li>
-            </ul> 
-<!--
+            </ul>
+            <!--
             {% assign category = site.categories.aws %}
             <ul>
                 <li><a href="/categories/aws" class="">AWS ({{category.size}})</a></li>
@@ -77,18 +77,32 @@
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             {% assign category = site.categories.personalproject %}
             <ul>
-                <li><a href="/categories/personalproject" class="">개인 프로젝트 ({{category.size}})</a></li>
+                {% for category in site.categories %}
+                {% if category[0] == "developer_discovery" %}
+                <li><a href="/categories/developer_discovery" class="">Developer_Discovery ({{category[1].size}})</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                {% if category[0] == "personalproject" %}
+                <li><a href="/categories/personalproject" class="">개인 프로젝트 ({{category[1].size}})</a></li>
+                {% endif %}
+                {% endfor %}
             </ul>
 
             {% assign category = site.categories.django %}
             <ul>
                 <li><a href="/categories/django" class="">Django ({{category.size}})</a></li>
             </ul>
-
-            {% assign category = site.categories.appbasic %}
-            <ul>
-                <li><a href="/categories/appbasic" class="">APP 이론 ({{category.size}})</a></li>
-            </ul>
+            <!-- <ul>
+                {% for category in site.categories %}
+                {% if category[0] == "appbasic" %}
+                <li><a href="/categories/appbasic" class="">APP 이론 ({{category[1].size}})</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul> -->
         </li>
     </ul>
 </nav>
