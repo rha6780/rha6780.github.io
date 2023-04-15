@@ -32,7 +32,7 @@ tags:
 
 <br>
 
-**이슈 관련 참고 자료** 
+**이슈 관련 참고 자료**  
 [AttributeError: type object 'User' has no attribute 'USERNAME_FIELD' - Google Search](https://www.google.com/search?q=AttributeError:+type+object+'User'+has+no+attribute+'USERNAME_FIELD'&oq=AttributeError:+type+object+'User'+has+no+attribute+'USERNAME_FIELD'&aqs=chrome..69i57j69i58.458j0j7&sourceid=chrome&ie=UTF-8)
 
 [Django](https://docs.djangoproject.com/ko/2.1/topics/auth/customizing/)
