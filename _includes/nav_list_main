@@ -42,7 +42,7 @@
             </ul>
             {% assign category = site.categories.algorithm %}
             <ul>
-                <li><a href="/categories/algorithm" class="">Algorithm_JAVA ({{category.size}})</a></li>
+                <li><a href="/categories/algorithm" class="">Algorithm ({{category.size}})</a></li>
             </ul>
             {% assign category = site.categories.beakjoon %}
             <ul>
