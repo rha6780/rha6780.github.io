@@ -4,10 +4,7 @@ date: 2021-12-13
 
 categories:
   - personalproject
-tags:
-  - apache
-  - django
-  - cps-home
+
 ---
 
 <br>

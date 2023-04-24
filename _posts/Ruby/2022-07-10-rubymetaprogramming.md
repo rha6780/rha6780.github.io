@@ -4,8 +4,7 @@ date: 2022-07-16
 
 categories:
   - ruby
-tags:
-  - ruby
+
 ---
 
 

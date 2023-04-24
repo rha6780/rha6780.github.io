@@ -4,9 +4,7 @@ date: 2023-04-04
 
 categories:
   - ruby
-tags:
-  - ruby
-  - rails
+
 ---
 
 ## 소개
@@ -52,23 +50,23 @@ SRP란, 단일의 클래스 등이 해당 부분에 대해서만 책임을 져�
 Active Record가 MVC에서 M(모델)의 역할을 한다고 소개하였다. 그렇기 때문에 모델로 인해 구성되는 테이블과도 깊은 관련이 있는데 그 중 하나는 이름이다. 예를 들어 모델을 Book이라고 작성하면 테이블 명은 복수형인 books가 되고 스네이크 케이스로 지정된다.
 
 | Model/class | Table/Schema |
-| --- | --- |
-| Article | articles |
-| Mouse | mice |
-| BookList | book_lists |
+| ----------- | ------------ |
+| Article     | articles     |
+| Mouse       | mice         |
+| BookList    | book_lists   |
 
 ### Schema Conventions
 
 스키마 컨벤션은 실제 테이블에 해당하는 속성들 중 일반적인 컨벤션을 의미한다. 그 중 외래키(Foreign_key), 기본키 (Primary_key) 등이 이에 해당한다.
 
-| 이름 | 설명 |
-| --- | --- |
-| Primary_key | 주로 id라는 이름으로 짓고, 타입으로 bigint는 postgres와 mysql, integer은 SQLite에 사용한다. |
-| Foreign_key | 주로 해당하는 테이블 명(단수)_id 형식으로 작성한다. (ex: book_lists의 기본키를 가져옴→ book_list_id) |
-| created_at | 생성 날짜 |
-| updated_at | 수정 날짜 |
-| lock_version | 긍정적 locking 에서 사용할 때 추가한다. |
-| 테이블명_type | 다형성(ploymorphic) 구조에서 테이블 타입을 정의할 때 사용한다. |
+| 이름          | 설명                                                                                                 |
+| ------------- | ---------------------------------------------------------------------------------------------------- |
+| Primary_key   | 주로 id라는 이름으로 짓고, 타입으로 bigint는 postgres와 mysql, integer은 SQLite에 사용한다.          |
+| Foreign_key   | 주로 해당하는 테이블 명(단수)_id 형식으로 작성한다. (ex: book_lists의 기본키를 가져옴→ book_list_id) |
+| created_at    | 생성 날짜                                                                                            |
+| updated_at    | 수정 날짜                                                                                            |
+| lock_version  | 긍정적 locking 에서 사용할 때 추가한다.                                                              |
+| 테이블명_type | 다형성(ploymorphic) 구조에서 테이블 타입을 정의할 때 사용한다.                                       |
 
 
 ## 모델 작성하기

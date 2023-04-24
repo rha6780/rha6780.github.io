@@ -8,12 +8,11 @@ layout: archive
 {% for tag in site.tags %}
 <span itemprop="keywords">
 
-  {% if tag.path != null }
+
   <a href="{{ tag[0] | slugify }}" class="page__taxonomy-item p-category">
-    <strong>{{ tag[0] }}</strong> <span class="taxonomy__count">({{ tag[0].size }})</span>
+    <strong>{{ tag[0] }}</strong> <span class="taxonomy__count">({{ tag[1].size }})</span>
   </a>
 
-  {% endif %}
 </span>
 {% endfor %}
 </p>

@@ -4,10 +4,7 @@ date: 2021-11-26
 
 categories:
   - personalproject
-tags:
-  - apache
-  - django
-  - cps-home
+
 ---
 
 # 우리 서버란 말이에요... ㅠㅠ

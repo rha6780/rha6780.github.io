@@ -4,8 +4,7 @@ date: 2023-04-01
 
 categories:
   - event
-tags:
-  - event
+
 ---
 
 ### 희망 퇴직 신청과 그 동안을 돌아보며

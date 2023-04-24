@@ -4,8 +4,7 @@ date: 2023-03-11
 
 categories:
   - python
-tags:
-  - python
+
 ---
 ### 연산자
 

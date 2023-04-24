@@ -4,8 +4,7 @@ date: 2023-04-01
 
 categories:
   - shell
-tags:
-  - shell
+
 ---
 
 ### shell 이란

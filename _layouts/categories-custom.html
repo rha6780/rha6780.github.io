@@ -9,7 +9,7 @@ layout: archive
   {% for category in site.categories %}
   <span itemprop="keywords">
     <a href="{{ category[0] | slugify }}" class="page__taxonomy-item p-category">
-      <strong>{{ category[0] }}</strong> <span class="taxonomy__count">({{ category[0].size }})</span>
+      <strong>{{ category[0] }}</strong> <span class="taxonomy__count">({{ category[1].size }})</span>
     </a>
   </span>
 

@@ -4,8 +4,7 @@ date: 2021-12-20
 
 categories:
   - appbasic
-tags:
-  - appbasic
+
 ---
 
 # 생명주기
