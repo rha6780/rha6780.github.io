@@ -1,0 +1,20 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+<p class="page__taxonomy">
+
+  {% for category in site.categories %}
+  <span itemprop="keywords">
+    <a href="{{ category[0] | slugify }}" class="page__taxonomy-item p-category">
+      <strong>{{ category[0] }}</strong> <span class="taxonomy__count">({{ category[0].size }})</span>
+    </a>
+  </span>
+
+  {% endfor %}
+
+</p>
+
+<!-- class="taxonomy__index" -->
