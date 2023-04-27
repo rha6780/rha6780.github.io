@@ -1,7 +1,7 @@
 ---
 title: "Developer_Discovery"
 layout: archive
-permalink: tags/developer-discovery
+permalink: tags/developer_discovery
 author_profile: true
 sidebar_main: true
 ---
