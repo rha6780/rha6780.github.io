@@ -47,14 +47,14 @@ tfstate는 현재 인프라 상태 코드와 같다. Terraform이 실제 인프�
 
 tfstate를 공유한다고 이야기 하였는데, 주로 공유하기 위해서 AWS S3 등을 이용한다. tfstate를 어디에 저장할 건지 backend 에 정의를 하는데, 작성하지 않은 경우 로컬에 생성된다. 이렇게 저장하고 `terraform init` 이라는 명령어를 사용하면 앞으로 S3에서 tfstate를 읽어올 수 있게 된다.
 
-```javascript
+```json
 terraform {
-	backend "s3" {
-	    bucket  = "사용할 버킷"
-        key     = "오브젝트 키"
-        region  = "버킷 리전"
-        profile = "aws profile (aws cli 참고)"
-    }
+  backend "s3" {
+    bucket  = "사용할 버킷"
+    key     = "오브젝트 키"
+    region  = "버킷 리전"
+    profile = "aws profile (aws cli 참고)"
+  }
 }
 ```
 
