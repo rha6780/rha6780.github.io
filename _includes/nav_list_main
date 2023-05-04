@@ -65,12 +65,12 @@
             {% assign category = site.categories.aws %}
             <ul>
                 <li><a href="/categories/aws" class="">AWS ({{category.size}})</a></li>
-            </ul>
+            </ul>-->
             {% assign category = site.categories.terraform %}
             <ul>
                 <li><a href="/categories/terraform" class="">Terraform ({{category.size}})</a></li>
             </ul>
--->
+
         </li>
         <li>
             <span class="nav__sub-title">PROJECT</span>
