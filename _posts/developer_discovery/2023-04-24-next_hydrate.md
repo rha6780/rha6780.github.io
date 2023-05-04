@@ -1,7 +1,6 @@
 ---
 title: "hydrate 란?"
 date: 2023-04-24
-
 categories:
   - developer_discovery
 tags:

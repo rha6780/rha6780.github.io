@@ -1,7 +1,9 @@
 ---
 title: "유저 모델 수정과 비밀번호 찾기 로직"
 date: 2023-05-02
-
+toc: true
+toc_label: 'Content list'
+toc_sticky: true
 categories:
   - developer_discovery
 tags:
