@@ -237,8 +237,9 @@ static void back_track(int s, int len) {
 	
 	if(len==0) {
 		for(int i=0; i<n; i++) {
-			visited[i] = 0;
-			System.out.print(visited[i]+" ");
+			if (visited[i] == 1) {
+				System.out.print(visited[i]+" ");
+			}
 		}
 		return;
 	} else {
