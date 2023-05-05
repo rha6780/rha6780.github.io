@@ -176,8 +176,121 @@ public class Main {
 }
 ```
 
+<br>
 
 
+하지만, 이항 계수 2 문제의 경우 위 2가지 풀이로도 풀리지만, [이항 계수 3](https://www.acmicpc.net/problem/11401)부터는 그렇지 않다. 3부터는 숫자 자체가 엄청나게 커지기 때문에 모듈로와 관련된 수학적 개념이 필요하다.
+
+
+<br>
+
+
+### 묘듈로 인버스(**modulo inverse**) **풀이**
+
+**모듈로(modulo) 란?**
+
+값이 엄청나게 큰 경우, 모듈로(나머지)와 관련을 둘 수 있다. 아래 예시를 보자.
+
+```java
+(7^3)%3 = 343%3 = 1
+7%3 = 1
+
+7^3 과 7을 각각 3으로 나누었을 때 나머지는 1로 같다. 이를 아래와 같이 표현할 수 있다.
+7^3 = 7(mod 3)
+
+a^p = a(mod p) p는 소수이고, a 는 p의 배수가 아니다.
+```
+
+<br>
+
+**모듈로의 역원(modulo inverse)**
+
+```java
+페르마의 소정리
+p가 소수이고, 모든 정수 a 에서..
+a^p = a(mod p)
+
+p가 소수이고 a가 p의 배수가 아니라면
+a^p-1 = 1(mod p)
+
+```
+
+모듈로의 역원이란, a(mod p) 에서 c를 곱했을 때 1을 만족하는 c의 값을 의미한다. 아래 예시와 같이 보자.
+```java
+a/b(mod p) = a(mod p) * c(mod p)
+```
+
+다음과 같이 사용이 가능하다 `a/b`라는 식이 있을 때 이를 곱셈으로 치환할 수 있다. 해당 문제에서는 값이 너무 크기 때문에 1,000,000,007로 나눈 나머지를 출력해야하는데, 이 값을 나눗셈에도 적용할 수 없기 때문에 모듈로 인버스를 이용해서 곱셈으로 두어서 계산하는 것이다. 그렇다면 `a/b` 에 곱하면 나머지가 1이되는 수... `c`는 어떻게 구할까? 
+
+<br>
+
+위 페르마의 소정리를 보면 `a^p-1 = 1(mod p)` 라는 식이 있는데, 각각 a 대신 b로 치환한 `b^p-1 = 1(mod p)` 이기 때문에 기존 `a * b^-1 (mod p)` 에 곱하면... 즉, b^-1(mod p)에 역원은 `b^p-2 mod p` 와 같다.
+
+```java
+(20/5) % 11 = 4
+간단히 계산하면 4로 나오지만, 만약 mod를 이용한다면... 
+
+(20 / 5)(mod 11) = 4(mod 11)
+20 (mod 11) * 1/5 (mod 11) = 4 (mod 11)
+5^-1(mod 11)이 1이 되는 수를 찾는다.
+
+x * 5^-1(mod 11) = 1 -> x = 5
+(20(mod 11)) * 20 = (20 * 20)(mod 11) = 400 % 11 = 4
+```
+
+<br>
+
+`x = 5` 는 어떻게 찾은 걸까? `a^p-2 = 1 (mod p)` 라는 공식을 통해서 가능하다. 5^11-2 = (20 * (5^9)%11) % 11=> (20 * 5)%11 = 1(페르마의 소정리에 의하면 a와 p가 서로소 일때 가능하다.)
+이렇게 하면 큰수를 mod 11 을 이용해서 작은 수로 변환가능하기 때문에 코드에서 작은 수 끼리만 곱셈이 가능하다. 그렇기에 범위를 넘기지 않는다. 
+
+<br>
+
+다시 조합을 생각해보면… 곱셈은 nCr = n! / (n-r)! r! 이기때문에 `(n! / (n-r)! r!) mod = (n!* ((n-r)! r!)의 역원) mod` 이다. 그럼 `((n-r)! r!)의 역원` 만 제대로 구하면 된다.. 곱셈에는 mod가 각각 들어갈 수 있기 때문에 `n! mod * (n-r)! r!)^p-2) mod` 와 같다. 계산을 위해서 `(n-r)! r!)^p-2` 를 구하고 나눗셈 계산을 하면 된다.
+
+<br>
+
+```java
+public class Main {
+
+    public static long mod = 1_000_000_007;
+
+    public static long exponent(long value, long ex) {
+        if (ex == 0) {
+            return 1;
+        } else {
+            long tmp = exponent(value, ex / 2);
+            if (ex % 2 == 1) {
+                return (((tmp * tmp) % mod) * value) % mod;
+            }
+            return (tmp * tmp) % mod;
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+
+        long n = 1;
+        long k = 1;
+
+        for (int i = 0; i < K; i++) {
+            n *= N;
+            n %= mod;
+
+            k *= (K - i);
+            k %= mod;
+            N--;
+        }
+
+        System.out.println((n * exponent(k, mod - 2)) % (mod));
+    }
+}
+```
+
+<br>
 
 <br>
 
