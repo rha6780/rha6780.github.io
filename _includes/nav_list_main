@@ -14,7 +14,7 @@
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             {% assign category = site.categories.os %}
             <ul>
-                <li><a href="/categories/os" class="">OS/운영체제 ({{category.size}})</a></li>
+                <li><a href="/categories/os" class="">이론 ({{category.size}})</a></li>
             </ul>
             <!-- 
             {% assign category = site.categories.network %}
