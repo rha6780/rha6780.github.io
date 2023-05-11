@@ -358,7 +358,7 @@ static void back_track(int s, int len) {
 	} else {
 		for(int i = s; i < n; i++) {
 			visited[i] = 1;
-			comb(result, i+1, n, len-1);
+			comb(i+1, len-1);
 			visited[i] = 0;
 		}
 	}

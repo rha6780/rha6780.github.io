@@ -148,7 +148,7 @@ resource "aws_instance" "developer_discovery_api"{
 
 resource 는 해당 aws_instance(EC2) 라는 인프라 리소스를 정의한다. 일단 프로젝트 이름과 동일하게 developer_discovery_api 로 작성하고, 위에서 정의한 ami 이미지로 생성하게 두었다. instance_type은 가격이 덜나가는 것으로 지정하였다.
 
-그리고 filter의 경우, 가져올 data source에 대해서 검색하는 기능으로 아래의 경우 이름이 `ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*` 인 것을 찾아서 가져온다. 여러개가 있는 경우 and 로 필터 타입이 같은데, values가 여러 아이템인 경우 or 로 연산된다.
+그리고 filter의 경우, 가져올 data source에 대해서 검색하는 기능으로 아래의 경우 이름이 `ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*` 인 것을 찾아서 가져온다. 여러개가 있는 경우 and 로, 필터 타입이 같은데 values가 여러 아이템인 경우 or 로 연산된다.
 
 ```jsx
 filter {
