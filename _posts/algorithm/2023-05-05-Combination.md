@@ -99,7 +99,7 @@ public static void main(String[] args) {
 
 ```
 
-위 코드는 백준 [이항계수 1](https://www.acmicpc.net/problem/11050) 문제이다. N이 10 이하이기 때문에 곱셈을 마음껏 해도 범위를 넘지 않는다. 하지만, 범위를 넘는 경우는 조심해야한다. 바로 다음 문제인 [이항계수 2](https://www.acmicpc.net/problem/11051) 문제는 기존 integer 범위를 넘기 때문에 별도로 나눠야 하는 문제인데… 위 코드와 다르게 푸는 방식이 있다.
+위 코드는 백준 [이항계수 1](https://www.acmicpc.net/problem/11050) 문제이다. N이 10 이하이기 때문에 곱셈을 마음껏 해도 범위를 넘지 않는다. 하지만, 범위를 넘는 경우는 조심해야한다. 바로 다음 문제인 [이항계수 2](https://www.acmicpc.net/problem/11051) 문제는 기존 integer 범위를 넘기 때문에 별도로 나눠야 하는 문제인데… 위 코드와 다르게 푸는 방식이 있다. 일단 이항계수와 관련된 것들을 보자.
 
 <br>
 
