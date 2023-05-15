@@ -64,7 +64,7 @@ jobs:
             terraform apply -auto-approve -input=false
 ```
 
-하지만, 문제가 있었다. 전 글을 보면 알겠지만, 서비스 별로 폴더를 분리해두어서 각각 terraform init, plan, apply 를 하려면 해당 폴더로 이동해야하기 때문에, 값을 받아서 해당하는 폴더의 리소스에서 액션이 돌아가도록 할 예정이다.
+하지만, 문제가 있었다. 전 글을 보면 알겠지만, 서비스 별로 폴더를 분리해두어서 각각 terraform init, plan, apply 를 하려면 해당 폴더로 이동해야하기 때문에, 값을 받아서 해당하는 폴더의 리소스에서 액션이 돌아가도록 할 예정이다. 위에는 $ 이 후가 안 나와있지만, `${{ secrets.AWS_ACCESS_KEY_ID }}` 과 `${{ secrets.AWS_SECRET_ACCESS_KEY }}` 가 작성되어있다.
 
 <br>
 
@@ -125,7 +125,7 @@ defaults:
 
 ### 전체 코드
 
-```bash
+```yaml
 name: terraform-deploy
 
 on:
