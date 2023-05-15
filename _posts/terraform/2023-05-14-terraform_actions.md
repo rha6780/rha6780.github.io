@@ -125,7 +125,7 @@ defaults:
 
 ### 전체 코드
 
-```yaml
+```bash
 name: terraform-deploy
 
 on:
