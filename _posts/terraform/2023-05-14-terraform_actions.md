@@ -25,7 +25,7 @@ categories:
 
 ### 코드를 작성하기 까지
 
-```jsx
+```yaml
 name: terraform-deploy
 
 on:
@@ -70,7 +70,7 @@ jobs:
 
 그러면… 기획을 조금 바꾸어서 main 브랜치에서만 워크 플로우가 돌도록 하는 것을 목표로 잡았다. actions 을 작성할때, 값을 받는 부분이 필요한데, 이는 다음과 같이 작성할 수 있다. ([참고](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions))
 
-```jsx
+```yaml
 on:
   workflow_dispatch:
     inputs:
@@ -125,7 +125,7 @@ defaults:
 
 ### 전체 코드
 
-```jsx
+```yaml
 name: terraform-deploy
 
 on:
