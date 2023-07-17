@@ -33,7 +33,12 @@
       /* calculate height of nav list
          viewport height - nav height - masthead x-padding
       */
-      max-height: calc(300vh - #{$nav-height} - 2em);
+      max-height: calc(100vh - #{$nav-height} - 2em);
+      // max-height: calc(300vh - #{$nav-height} - 2em);
+    }
+
+    &::-webkit-scrollbar{
+      display: none;
     }
   }
 
