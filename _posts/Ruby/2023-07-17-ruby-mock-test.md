@@ -1,5 +1,5 @@
 ---
-title: "[Rails] ActiveRecord 란?"
+title: "[Rails] Mock을 활용해서 테스트코드를 작성하자."
 date: 2023-07-17
 
 categories:
