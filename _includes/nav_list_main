@@ -26,12 +26,10 @@
         <li>
             <span class="nav__sub-title">Programming</span>
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
-            <!--
-                {% assign category = site.categories.java %}
-                    <ul>
-                        <li><a href="/categories/java" class="">Java ({{category[1].size}})</a></li>
-                    </ul>
-            -->
+            {% assign category = site.categories.java %}
+            <ul>
+                <li><a href="/categories/java" class="">Java ({{category.size}})</a></li>
+            </ul>
             {% assign category = site.categories.ruby %}
             <ul>
                 <li><a href="/categories/ruby" class="">Ruby ({{category.size}})</a></li>
