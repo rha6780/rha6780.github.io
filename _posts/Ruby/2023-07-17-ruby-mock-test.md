@@ -58,90 +58,96 @@ Spy : 테스트가 끝날 때, 두 객체간의 상호작용이 제대로 일어
 
 우리가 특정 요인에 의해서 응답 값을 기대하기 어려운 경우가 있을 수 있다.  참고한 자료에서는 아래와 같이 설명하고 있다.
 
-```ruby
+```text
 시나리오 : 여론조사를 통해서 사용자가 특정 요소를 통해서 nudge!라는 메소드를 호출한다는 것을 테스트하고 싶다.
+```
 
 이때, instance_double은 allow를 통해 nudge!를 정의하지 않으면, 해당 메세지를 모르기 때문에 정의해야한다.
 만약 항상 nudge!가 불린다면, 쉽게 설정이 가능하다. 항상 불리는게 아니라서 필요한 것은 사용자가 호출한 메소드지만, 
 실제로 어떤 메소드를 호출할지 모르기 때문에 모든 경우를 다 작성해야한다.
+
+<br>
 
 하지만, Spy를 이용하면... 메소드와 객체가 실행하는 도중에 발생하는 메세지를 모두 기록하기 때문에 해당 요소를
 정의하지 않더라도 기댓값을 구할 수 있다.
 
 즉, 기존에는 특정 요소에 따라 호출되는 메소드가 다르기 때문에 각각 allow를 통해 지정하지만, Spy를 이용하면..
 전부 기록하기 때문에 각각 지정할 필요가 없다. 메소드가 종료되면, 기록한 메세지를 종합해 검사하는 것이다.
-```
 
-- Spy를 썼을때와 Mock을 썼을 때 코드 차이
+
+<br>
+
+**Spy를 썼을때와 Mock을 썼을 때 코드 차이**
     
-    form의 좋아요, 싫어요, nudge가 있는 FeedBack클래스가 있고, 사용자의 정보를 담는 Paricipant 클래스가 있다. subjects를 통해 상황에 따라 과목이 선택된다.
-    
-    ```ruby
-    class Feedback
-      attr_reader :subject, :likes, :dislikes
-    
-      def initialize(**args)
-        @subject = args[:subject] || 'default'
-        @likes, @dislikes = 0, 0
-        @nudge = nil
-      end
-    
-      def like
-        @likes += 1
-      end
-    
-      def dislike
-        @dislikes += 1
-      end
-    
-      def nudge!(data)
-        @nudge = data
-      end
-    
-      def nudged?
-        @nudge
-      end
+  form의 좋아요, 싫어요, nudge가 있는 FeedBack클래스가 있고, 사용자의 정보를 담는 Paricipant 클래스가 있다. subjects를 통해 상황에 따라 과목이 선택된다.
+  
+  ```ruby
+  class Feedback
+    attr_reader :subject, :likes, :dislikes
+  
+    def initialize(**args)
+      @subject = args[:subject] || 'default'
+      @likes, @dislikes = 0, 0
+      @nudge = nil
     end
-    ```
-    
-    ```ruby
-    RSpec.describe Poll do
-      let(:names) { %w(alice adam peter kate) }
-      let(:subjects) { %w(math physics history biology) }
-      subject { described_class.new(names: names, subjects: subjects) }	
-    
-    	# 중략
-    describe 'test instances with expected arguments not known in advance. Spy vs Mock' do
-    		context 'using spy' do
-          context 'when 4 participants and 4 subjects' do
-            it 'nudges one feedback' do
-              fake_feedback = instance_spy(Feedback)
-              allow(Feedback).to receive(:new).and_return(fake_feedback)
-              nudge_template = subject.run
-              expect(fake_feedback).to have_received(:nudge!).with(nudge_template).once
-            end
+  
+    def like
+      @likes += 1
+    end
+  
+    def dislike
+      @dislikes += 1
+    end
+  
+    def nudge!(data)
+      @nudge = data
+    end
+  
+    def nudged?
+      @nudge
+    end
+  end
+  ```
+  <br>
+
+  ```ruby
+  RSpec.describe Poll do
+    let(:names) { %w(alice adam peter kate) }
+    let(:subjects) { %w(math physics history biology) }
+    subject { described_class.new(names: names, subjects: subjects) }	
+  
+    # 중략
+  describe 'test instances with expected arguments not known in advance. Spy vs Mock' do
+      context 'using spy' do
+        context 'when 4 participants and 4 subjects' do
+          it 'nudges one feedback' do
+            fake_feedback = instance_spy(Feedback)
+            allow(Feedback).to receive(:new).and_return(fake_feedback)
+            nudge_template = subject.run
+            expect(fake_feedback).to have_received(:nudge!).with(nudge_template).once
           end
         end
-    
-        context 'using mock' do
-          context 'when 4 participants and 4 subjects' do
-            it 'nudges one feedback' do
-              fake_feedback = instance_double(Feedback)
-              allow(fake_feedback).to receive(:nudge!)
-              allow(fake_feedback).to receive(:nudged?)
-              allow(fake_feedback).to receive(:like)
-              allow(fake_feedback).to receive(:dislike)
-              allow(Feedback).to receive(:new).and_return(fake_feedback)
-              nudge_template = subject.run
-              expect(fake_feedback).to have_received(:nudge!).with(nudge_template).once
-            end
+      end
+  
+      context 'using mock' do
+        context 'when 4 participants and 4 subjects' do
+          it 'nudges one feedback' do
+            fake_feedback = instance_double(Feedback)
+            allow(fake_feedback).to receive(:nudge!)
+            allow(fake_feedback).to receive(:nudged?)
+            allow(fake_feedback).to receive(:like)
+            allow(fake_feedback).to receive(:dislike)
+            allow(Feedback).to receive(:new).and_return(fake_feedback)
+            nudge_template = subject.run
+            expect(fake_feedback).to have_received(:nudge!).with(nudge_template).once
           end
         end
-    	end
+      end
     end
-    ```
-    
-    즉, Mock은 4명의 사용자가 뭘 호출할지 모르기 때문에 모든 경우에 대해서 allow로 전부 정의 하였지만, Spy를 이용하면 내부에 메세지들을 전부 기록해서 찾을 수 있기 때문에 전부 정의할 필요가 없는 것이다.
+  end
+  ```
+  
+  즉, Mock은 4명의 사용자가 뭘 호출할지 모르기 때문에 모든 경우에 대해서 allow로 전부 정의 하였지만, Spy를 이용하면 내부에 메세지들을 전부 기록해서 찾을 수 있기 때문에 전부 정의할 필요가 없는 것이다.
 
 <br>    
 
@@ -219,7 +225,7 @@ allow(user).to receive(:not_update).and_return("update success!")
 
 ## 특정 외부 API 를 호출하는 경우
 
-https://github.com/bblimke/webmock
+[참고 자료](https://github.com/bblimke/webmock)
 
 API를 호출하여서 계산하는 어떤 기능이 있다고 하자. 이때 테스트 코드를 작성하면, 해당 API를 테스트하는 동안에 요청하게 된다. 과정 상으로 문제는 없지만, 네트워크, AWS와 같은 외부 서비스의 API를 이용하는 경우에는 비용적인 측면에도 비 효율적일 수 있다.
 
