@@ -104,7 +104,7 @@ author:
   name             : "rha6780"
   avatar           : "/assets/profile/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "머쓱해요...! 코딩 초보 탈출기..!"
-  beakjoon         : "https://www.acmicpc.net/user/rha6780"
+  # beakjoon         : "https://www.acmicpc.net/user/rha6780"
   # git              : "https://github.com/rha6780"
   location         :
   email            :
@@ -112,7 +112,7 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
-    - label: "Website"
+    - label: "Beakjoon"
       icon: "fas fa-fw fa-link"
       url: "https://www.acmicpc.net/user/rha6780"
     - label: "Twitter"
