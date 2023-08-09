@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Portfolio"
+    url: https://rha6780.github.io/portfolio
   - title: "Home"
     url: https://rha6780.github.io
   #- title: "Quick-Start Guide"
