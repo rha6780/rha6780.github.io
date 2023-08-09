@@ -1,7 +1,7 @@
 ---
 title: "도메인 연결 및 EC2에 웹 올리기"
 date: 2023-06-22
-toc: true
+# toc: true
 toc_label: 'Content list'
 toc_sticky: true
 categories:

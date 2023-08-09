@@ -1,7 +1,7 @@
 ---
 title: "프로젝트를 종료하면서"
 date: 2023-08-08
-toc: true
+# toc: true
 categories:
   - developer_discovery
 tags:

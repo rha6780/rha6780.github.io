@@ -1,7 +1,7 @@
 ---
 title: "조합론(Combination)"
 date: 2023-05-05
-toc: true
+# toc: true
 toc_label: 'Content list'
 toc_sticky: true
 categories:

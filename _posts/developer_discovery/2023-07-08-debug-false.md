@@ -1,7 +1,7 @@
 ---
 title: "Debug=False 와 렌더링 시간"
 date: 2023-07-08
-toc: true
+# toc: true
 categories:
   - developer_discovery
 tags:

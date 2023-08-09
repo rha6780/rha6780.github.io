@@ -1,7 +1,7 @@
 ---
 title: "CodeDeploy 설정"
 date: 2023-06-04
-toc: true
+# toc: true
 toc_label: 'Content list'
 toc_sticky: true
 categories:

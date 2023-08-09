@@ -1,7 +1,7 @@
 ---
 title: "Developer Discovery 프로젝트를 시작하며"
 date: 2023-01-29
-toc: true
+# toc: true
 categories:
   - developer_discovery
 tags:

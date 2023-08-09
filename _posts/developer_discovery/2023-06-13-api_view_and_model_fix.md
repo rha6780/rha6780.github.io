@@ -1,7 +1,7 @@
 ---
 title: "Post 모델, API 수정에 대하여"
 date: 2023-06-13
-toc: true
+# toc: true
 toc_label: 'Content list'
 toc_sticky: true
 categories:

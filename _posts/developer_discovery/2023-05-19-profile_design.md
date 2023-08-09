@@ -1,7 +1,7 @@
 ---
 title: "에러 메세지, 디자인 수정, 프로필"
 date: 2023-05-19
-toc: true
+# toc: true
 toc_label: 'Content list'
 toc_sticky: true
 categories:
