@@ -38,12 +38,12 @@ body {
 .page {
   @include breakpoint($large) {
     float: right;
-    width: calc(100% - #{$right-sidebar-width});
+    width: calc(100% - #{$right-sidebar-width} - 20px);
     // padding-right: $right-sidebar-width;
   }
 
   @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
+    width: calc(100% - #{$right-sidebar-width} - 20px);
     // padding-right: $right-sidebar-width;
   }
 
@@ -118,7 +118,7 @@ body {
   p,
   li,
   dl {
-    font-size: 15px;
+    font-size: $type-size-6;
   }
 
   /* paragraph indents */
