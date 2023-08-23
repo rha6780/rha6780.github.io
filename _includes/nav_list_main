@@ -84,11 +84,6 @@
                 {% endif %}
                 {% endfor %}
             </ul>
-
-            {% assign category = site.categories.django %}
-            <ul>
-                <li><a href="/categories/django" class="">Django ({{category.size}})</a></li>
-            </ul>
             <!-- <ul>
                 {% for category in site.categories %}
                 {% if category[0] == "appbasic" %}
