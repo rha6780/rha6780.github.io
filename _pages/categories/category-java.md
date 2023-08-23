@@ -1,18 +1,11 @@
 ---
 title: "Java"
-layout: archive
-permalink: categories/java
+layout: post-list
+permalink: /categories/java
 author_profile: true
 sidebar_main: true
+pagination: 
+  enabled: true
+  category: java
 ---
 
-{% assign posts = site.tags.spring %}
-{% for post in posts %} 
-    {% include archive-single2.html type=page.entries_layout %}
-{% endfor %}
-
-
-{% assign posts = site.tags.GOF %}
-{% for post in posts %} 
-    {% include archive-single2.html type=page.entries_layout %}
-{% endfor %}

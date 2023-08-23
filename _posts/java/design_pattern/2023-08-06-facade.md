@@ -7,7 +7,7 @@ categories:
 
 tags:
   - java
-  - GOF
+  - design_pattern
 
 ---
 

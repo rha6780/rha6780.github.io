@@ -1,12 +1,10 @@
 ---
 title: "Beakjoon"
-layout: archive
-permalink: categories/beakjoon
+layout: post-list
+permalink: /categories/beakjoon
 author_profile: true
 sidebar_main: true
+pagination: 
+  enabled: true
+  category: "Beakjoon"
 ---
-
-{% assign posts = site.categories.beakjoon %}
-{% for post in posts %} 
-    {% include archive-single2.html type=page.entries_layout %}
-{% endfor %}

@@ -4,5 +4,11 @@ gem "minimal-mistakes-jekyll"
 
 gem "webrick"
 
-gem "github-pages", group: :jekyll_plugins
-gem "jekyll-include-cache", group: :jekyll_plugins
+group :jekyll_plugins do
+    gem "jekyll-gist"
+    gem "jekyll-feed"
+    gem "github-pages"
+    gem "jekyll-sitemap"
+    gem "jekyll-include-cache"
+    gem "jekyll-paginate-v2"
+end
