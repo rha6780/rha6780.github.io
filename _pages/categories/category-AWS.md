@@ -1,12 +1,11 @@
 ---
 title: "AWS"
-layout: archive
-permalink: categories/aws
+layout: post-list
+permalink: /categories/aws
 author_profile: true
 sidebar_main: true
+pagination: 
+  enabled: true
+  category: aws
 ---
 
-{% assign posts = site.categories.aws %}
-{% for post in posts %} 
-    {% include archive-single2.html type=page.entries_layout %}
-{% endfor %}

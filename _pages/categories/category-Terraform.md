@@ -1,12 +1,10 @@
 ---
 title: "Terraform"
-layout: archive
-permalink: categories/terraform
+layout: post-list
+permalink: /categories/terraform
 author_profile: true
 sidebar_main: true
+pagination: 
+  enabled: true
+  category: terraform
 ---
-
-{% assign posts = site.categories.terraform %}
-{% for post in posts %} 
-    {% include archive-single2.html type=page.entries_layout %}
-{% endfor %}

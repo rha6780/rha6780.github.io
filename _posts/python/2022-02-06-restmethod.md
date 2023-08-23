@@ -3,8 +3,9 @@ title: "rest-framework method 정리"
 date: 2022-02-06
 
 categories:
-  - django
+  - python
 tags:
+  - python
   - django
 ---
 

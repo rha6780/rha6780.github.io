@@ -1,10 +1,10 @@
 ---
 title: "Developer_Discovery"
-layout: archive
-permalink: categories/developer_discovery
+layout: post-list
+permalink: /categories/developer_discovery
 author_profile: true
 sidebar_main: true
+pagination: 
+  enabled: true
+  category: developer_discovery
 ---
-
-{% assign posts = site.categories.developer_discovery %}
-{% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

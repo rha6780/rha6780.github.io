@@ -3,8 +3,9 @@ title: "PEP8과 pre-commit에 black,flake8 적용"
 date: 2022-01-09
 
 categories:
-  - django
+  - python
 tags:
+  - python
   - django
 ---
 

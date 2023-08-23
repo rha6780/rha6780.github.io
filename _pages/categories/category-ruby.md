@@ -1,12 +1,10 @@
 ---
 title: "Ruby"
-layout: archive
-permalink: categories/ruby
+layout: post-list
+permalink: /categories/ruby
 author_profile: true
 sidebar_main: true
+pagination: 
+  enabled: true
+  category: ruby
 ---
-
-{% assign posts = site.categories.ruby %}
-{% for post in posts %} 
-    {% include archive-single2.html type=page.entries_layout %}
-{% endfor %}

@@ -1,13 +1,10 @@
 ---
 title: "APP 이론"
-layout: archive
-permalink: categories/appbasic
+layout: post-list
+permalink: /categories/appbasic
 author_profile: true
 sidebar_main: true
+pagination: 
+  enabled: true
+  category: appbasic
 ---
-
-{% assign posts = site.categories.appbasic %}
-{% for post in posts %} 
-    {% include archive-single2.html type=page.entries_layout %}
-{% endfor %}
-

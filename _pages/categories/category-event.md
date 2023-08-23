@@ -1,12 +1,11 @@
 ---
 title: "Event"
-layout: archive
-permalink: categories/event
+layout: post-list
+permalink: /categories/event
 author_profile: true
 sidebar_main: true
+pagination: 
+  enabled: true
+  category: event
 ---
 
-{% assign posts = site.categories.event %}
-{% for post in posts %} 
-    {% include archive-single2.html type=page.entries_layout %}
-{% endfor %}
