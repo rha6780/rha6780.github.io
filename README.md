@@ -14,7 +14,14 @@ git pull 받고, [development_setup](https://github.com/rha6780/development_setu
 
 <br>
 
-또는 아래 명령어를 통해서 실행 $dir 에는 현재 레포 로컬 위치 또는 docker compose up -d 를 통해서 로컬 개발
+⚠️ Docker 를 이용한 개발 시 반영되는 시간이 느리기 때문에 로컬 개발을 추천합니다.
+
+<details>
+
+<summary> Docker 이용 </summary>
+
+아래 명령어를 통해서 실행 $dir 에는 현재 레포 로컬 위치 또는 docker compose up -d 를 통해서 개발 가능
+
 ```
 docker run --rm \
   --name my-blog \
@@ -23,3 +30,4 @@ docker run --rm \
   -it jekyll/jekyll \
   jekyll serve
 ```
+</details>
