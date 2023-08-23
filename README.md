@@ -10,4 +10,4 @@
 <br>
 
 ## 설정 및 포스트 작성 시
-git pull 받고, development_setup pull 이후에서 basic 메소드 실행으로 ruby를 설치합니다. 이후 `bundle exec jekyll serve`를 통해 로컬에서 테스트가 가능합니다. 원하는 포스트나 설정 이후 테스트 후 push 하면 퍼블릭하게 적용됩니다.
+git pull 받고, [development_setup](https://github.com/rha6780/development_setup) pull 이후에서 basic 메소드 실행으로 ruby를 설치합니다. 이후 `bundle exec jekyll serve`를 통해 로컬에서 테스트가 가능합니다. 원하는 포스트나 설정 이후 테스트 후 push 하면 퍼블릭하게 적용됩니다.
