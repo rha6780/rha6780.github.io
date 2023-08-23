@@ -11,3 +11,15 @@
 
 ## 설정 및 포스트 작성 시
 git pull 받고, [development_setup](https://github.com/rha6780/development_setup) pull 이후에서 basic 메소드 실행으로 ruby를 설치합니다. 이후 `bundle exec jekyll serve`를 통해 로컬에서 테스트가 가능합니다. 원하는 포스트나 설정 이후 테스트 후 push 하면 퍼블릭하게 적용됩니다.
+
+<br>
+
+또는 아래 명령어를 통해서 실행 $dir 에는 현재 레포 로컬 위치 또는 docker compose up -d 를 통해서 로컬 개발
+```
+docker run --rm \
+  --name my-blog \
+  --volume="$dir:/srv/jekyll" \
+  -p 4000:4000 \
+  -it jekyll/jekyll \
+  jekyll serve
+```

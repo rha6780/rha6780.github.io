@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  blog:
+    restart: always
+    image: jekyll/jekyll
+    volumes:
+      - ./:/srv/jekyll
+    ports:
+      - "4000:4000"
+
+
