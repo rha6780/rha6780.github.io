@@ -1,5 +1,5 @@
 ---
-title: "장고를 활용한 rest_framework 구성"
+title: "[Django] 장고를 활용한 rest_framework 구성"
 date: 2021-10-27
 
 categories:
