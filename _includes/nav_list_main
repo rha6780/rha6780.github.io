@@ -9,14 +9,19 @@
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             {% assign category = site.categories.os %}
             <ul>
-                <li><a href="/categories/os" class="">이론 ({{category.size}})</a></li>
+                <li><a href="/categories/os" class="">OS ({{category.size}})</a></li>
             </ul>
-            <!-- 
-            {% assign category = site.categories.network %}
+            
+            {% assign category = site.categories.web %}
             <ul>
-                <li><a href="/categories/network" class="">네트워크 ({{category.size}})</a></li>
+                <li><a href="/categories/web" class="">WEB ({{category.size}})</a></li>
             </ul> 
-        -->
+
+            <!-- {% assign category = site.categories.database %}
+            <ul>
+                <li><a href="/categories/database" class="">DB ({{category.size}})</a></li>
+            </ul> -->
+        
         </li>
         <li>
             <span class="nav__sub-title">Programming</span>
