@@ -95,26 +95,28 @@ public static int phi (int n) {
 <summary>예시</summary>
     
 ```java
+
 public static int phi (int n) {
-        int num = n;
-        for(int i=2; i<=Math.sqrt(n); i++) {
-                if(n%i == 0){ // n%i==0 인 것은 n이 i의 배수라는 것을 증명한다. 2번 성질을 적용해서 저장
-                    num = num/i*(i-1);
-                    System.out.println("반복문 에서.. i가 "+i+" 일때 체크 "+"1) n%i==0 : "+n+" num 에는 :"+num);
-                }
-                while(n%i == 0) { // 다음 계산을 위해 나눈다.
-                    System.out.println("반복문 에서.. i가 "+i+" 일때 체크 "+"2) n/=i : "+n);
-                    n/=i;
-                    System.out.println("반복문 에서.. i가 "+i+" 일때 체크 "+"3) n/=i : "+n);
-                }
-        } // 반복문을 거치면, n에 있는 약수는 전부 쪼개지고 소수가 남게 된다.
-    
-        if(n!=1) { //n이 1이 아니라면
-                num = num/n*(n-1);
-                System.out.println("n!=1 : "+num);
-        }
-        return num;
-        }
+    int num = n;
+    for(int i=2; i<=Math.sqrt(n); i++) {
+            if(n%i == 0){ // n%i==0 인 것은 n이 i의 배수라는 것을 증명한다. 2번 성질을 적용해서 저장
+                num = num/i*(i-1);
+                System.out.println("반복문 에서.. i가 "+i+" 일때 체크 "+"1) n%i==0 : "+n+" num 에는 :"+num);
+            }
+            while(n%i == 0) { // 다음 계산을 위해 나눈다.
+                System.out.println("반복문 에서.. i가 "+i+" 일때 체크 "+"2) n/=i : "+n);
+                n/=i;
+                System.out.println("반복문 에서.. i가 "+i+" 일때 체크 "+"3) n/=i : "+n);
+            }
+    } // 반복문을 거치면, n에 있는 약수는 전부 쪼개지고 소수가 남게 된다.
+
+    if(n!=1) { //n이 1이 아니라면
+            num = num/n*(n-1);
+            System.out.println("n!=1 : "+num);
+    }
+    return num;
+}
+
 ```
 
 아래와 같이 나온다.
