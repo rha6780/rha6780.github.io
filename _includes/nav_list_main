@@ -9,14 +9,38 @@
                 <summary> 이론</summary>
             <!-- <span class="nav__sub-title">이론</span> -->
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
-            {% assign category = site.categories.os %}
             <ul>
-                <li><a href="/categories/os" class="">OS ({{category.size}})</a></li>
+            <!-- {% assign category = site.categories.datastructure %}
+            <li><a href="/categories/datastructure" class="">자료구조 ({{category.size}})</a></li> -->
+
+            {% assign category = site.categories.os %}
             
+                <li><a href="/categories/os" class="">OS ({{category.size}})</a></li>
             
             {% assign category = site.categories.web %}
             
                 <li><a href="/categories/web" class="">WEB ({{category.size}})</a></li>
+
+            {% assign category = site.categories.database %}
+            
+                <li><a href="/categories/database" class="">DB ({{category.size}})</a></li>
+            </ul>
+            </details>
+        </li>
+        <li>
+            <details>
+                <summary> 알고리즘</summary>
+            <!-- <span class="nav__sub-title">이론</span> -->
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                
+            {% assign category = site.categories.algorithm %}
+            
+            <li><a href="/categories/algorithm" class="">Algorithm ({{category.size}})</a></li>
+        
+            {% assign category = site.categories.beakjoon %}
+        
+            <li><a href="/categories/beakjoon" class="">Beakjoon ({{category.size}})</a></li>
             </ul> 
 
             <!-- {% assign category = site.categories.database %}
@@ -27,7 +51,7 @@
         </li>
         <li>
             <details>
-                <summary> Programming</summary>
+                <summary>프로그래밍 언어</summary>
             <!-- <span class="nav__sub-title">Programming</span> -->
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             {% assign category = site.categories.java %}
@@ -42,13 +66,6 @@
             
                 <li><a href="/categories/python" class="">Python ({{category.size}})</a></li>
             
-            {% assign category = site.categories.algorithm %}
-            
-                <li><a href="/categories/algorithm" class="">Algorithm ({{category.size}})</a></li>
-            
-            {% assign category = site.categories.beakjoon %}
-            
-                <li><a href="/categories/beakjoon" class="">Beakjoon ({{category.size}})</a></li>
             </ul>
             </details>
         </li>

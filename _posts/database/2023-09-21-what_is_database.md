@@ -3,7 +3,7 @@ title: "데이터베이스와 데이터베이스 시스템"
 date: 2023-09-21
 
 categories:
-  - 
+  - database
 tags:
   -
 ---
