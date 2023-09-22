@@ -15,15 +15,15 @@
 
             {% assign category = site.categories.os %}
             
-                <li><a href="/categories/os" class="">OS ({{category.size}})</a></li>
+                <li><a href="/categories/os" class="nav__sub-li">OS ({{category.size}})</a></li>
             
             {% assign category = site.categories.web %}
             
-                <li><a href="/categories/web" class="">WEB ({{category.size}})</a></li>
+                <li><a href="/categories/web" class="nav__sub-li">WEB ({{category.size}})</a></li>
 
             {% assign category = site.categories.database %}
             
-                <li><a href="/categories/database" class="">DB ({{category.size}})</a></li>
+                <li><a href="/categories/database" class="nav__sub-li">DB ({{category.size}})</a></li>
             </ul>
             </details>
         </li>
@@ -36,11 +36,11 @@
                 
             {% assign category = site.categories.algorithm %}
             
-            <li><a href="/categories/algorithm" class="">Algorithm ({{category.size}})</a></li>
+            <li><a href="/categories/algorithm" class="nav__sub-li">Algorithm ({{category.size}})</a></li>
         
             {% assign category = site.categories.beakjoon %}
         
-            <li><a href="/categories/beakjoon" class="">Beakjoon ({{category.size}})</a></li>
+            <li><a href="/categories/beakjoon" class="nav__sub-li">Beakjoon ({{category.size}})</a></li>
             </ul> 
 
             <!-- {% assign category = site.categories.database %}
@@ -56,15 +56,15 @@
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             {% assign category = site.categories.java %}
             <ul>
-                <li><a href="/categories/java" class="">Java ({{category.size}})</a></li>
+                <li><a href="/categories/java" class="nav__sub-li">Java ({{category.size}})</a></li>
             
             {% assign category = site.categories.ruby %}
             
-                <li><a href="/categories/ruby" class="">Ruby ({{category.size}})</a></li>
+                <li><a href="/categories/ruby" class="nav__sub-li">Ruby ({{category.size}})</a></li>
             
             {% assign category = site.categories.python %}
             
-                <li><a href="/categories/python" class="">Python ({{category.size}})</a></li>
+                <li><a href="/categories/python" class="nav__sub-li">Python ({{category.size}})</a></li>
             
             </ul>
             </details>
@@ -76,11 +76,11 @@
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             {% assign category = site.categories.shell %}
             <ul>
-                <li><a href="/categories/shell" class="">Shell ({{category.size}})</a></li>
+                <li><a href="/categories/shell" class="nav__sub-li">Shell ({{category.size}})</a></li>
             
             {% assign category = site.categories.docker %}
             
-                <li><a href="/categories/docker" class="">Docker({{category.size}})</a></li>
+                <li><a href="/categories/docker" class="nav__sub-li">Docker({{category.size}})</a></li>
             
             <!--
             {% assign category = site.categories.aws %}
@@ -88,7 +88,7 @@
                 <li><a href="/categories/aws" class="">AWS ({{category.size}})</a></li>
             </ul>-->
             {% assign category = site.categories.terraform %}
-                <li><a href="/categories/terraform" class="">Terraform ({{category.size}})</a></li>
+                <li><a href="/categories/terraform" class="nav__sub-li">Terraform ({{category.size}})</a></li>
             </ul>
             </details>
         </li>
@@ -100,14 +100,14 @@
             <ul>
                 {% for category in site.categories %}
                 {% if category[0] == "developer_discovery" %}
-                <li><a href="/categories/developer_discovery" class="">Developer_Discovery ({{category[1].size}})</a>
+                <li><a href="/categories/developer_discovery" class="nav__sub-li">Developer_Discovery ({{category[1].size}})</a>
                 </li>
                 {% endif %}
                 {% endfor %}
             
                 {% for category in site.categories %}
                 {% if category[0] == "personalproject" %}
-                <li><a href="/categories/personalproject" class="">개인 프로젝트 ({{category[1].size}})</a></li>
+                <li><a href="/categories/personalproject" class="nav__sub-li">개인 프로젝트 ({{category[1].size}})</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>
@@ -126,7 +126,7 @@
             <!-- <span class="nav__sub-title">기타</span> -->
             {% assign category = site.categories.event %}
             <ul>
-                <li><a href="/categories/event" class="">🗓️ Event ({{category.size}})</a></li>
+                <li><a href="/categories/event" class="nav__sub-li">🗓️ Event ({{category.size}})</a></li>
             </ul>
             <!-- <li><a href="/categories/event" class="">🗓️ Event ({{category.size}})</a></li>-->
             </details>
