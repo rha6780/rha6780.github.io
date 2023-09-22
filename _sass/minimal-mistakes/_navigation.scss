@@ -496,8 +496,21 @@
   font-size: $type-size-6;
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 1px solid $border-color;
+  cursor: pointer;
+  // border-bottom: 1px solid $border-color;
 }
+
+/* deatils */
+summary {
+  margin: 0.25rem 0;
+  padding: 0.25rem 0;
+  font-family: $sans-serif-narrow;
+  font-size: $type-size-6;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 
 /*
      Table of contents navigation

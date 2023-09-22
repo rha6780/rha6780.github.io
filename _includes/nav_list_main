@@ -5,15 +5,17 @@
     <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
     <ul class="nav__items" id="category_tag_menu">
         <li>
-            <span class="nav__sub-title">이론</span>
+            <details>
+                <summary> 이론</summary>
+            <!-- <span class="nav__sub-title">이론</span> -->
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             {% assign category = site.categories.os %}
             <ul>
                 <li><a href="/categories/os" class="">OS ({{category.size}})</a></li>
-            </ul>
+            
             
             {% assign category = site.categories.web %}
-            <ul>
+            
                 <li><a href="/categories/web" class="">WEB ({{category.size}})</a></li>
             </ul> 
 
@@ -21,57 +23,61 @@
             <ul>
                 <li><a href="/categories/database" class="">DB ({{category.size}})</a></li>
             </ul> -->
-        
+            </details>
         </li>
         <li>
-            <span class="nav__sub-title">Programming</span>
+            <details>
+                <summary> Programming</summary>
+            <!-- <span class="nav__sub-title">Programming</span> -->
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             {% assign category = site.categories.java %}
             <ul>
                 <li><a href="/categories/java" class="">Java ({{category.size}})</a></li>
-            </ul>
+            
             {% assign category = site.categories.ruby %}
-            <ul>
+            
                 <li><a href="/categories/ruby" class="">Ruby ({{category.size}})</a></li>
-            </ul>
+            
             {% assign category = site.categories.python %}
-            <ul>
+            
                 <li><a href="/categories/python" class="">Python ({{category.size}})</a></li>
-            </ul>
+            
             {% assign category = site.categories.algorithm %}
-            <ul>
+            
                 <li><a href="/categories/algorithm" class="">Algorithm ({{category.size}})</a></li>
-            </ul>
+            
             {% assign category = site.categories.beakjoon %}
-            <ul>
+            
                 <li><a href="/categories/beakjoon" class="">Beakjoon ({{category.size}})</a></li>
             </ul>
-
+            </details>
         </li>
         <li>
-            <span class="nav__sub-title">Infra</span>
+            <details>
+                <summary> Infra</summary>
+            <!-- <span class="nav__sub-title">Infra</span> -->
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             {% assign category = site.categories.shell %}
             <ul>
                 <li><a href="/categories/shell" class="">Shell ({{category.size}})</a></li>
-            </ul>
+            
             {% assign category = site.categories.docker %}
-            <ul>
+            
                 <li><a href="/categories/docker" class="">Docker({{category.size}})</a></li>
-            </ul>
+            
             <!--
             {% assign category = site.categories.aws %}
             <ul>
                 <li><a href="/categories/aws" class="">AWS ({{category.size}})</a></li>
             </ul>-->
             {% assign category = site.categories.terraform %}
-            <ul>
                 <li><a href="/categories/terraform" class="">Terraform ({{category.size}})</a></li>
             </ul>
-
+            </details>
         </li>
         <li>
-            <span class="nav__sub-title">PROJECT</span>
+            <details>
+            <summary> PROJECT</summary>
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             {% assign category = site.categories.personalproject %}
             <ul>
@@ -81,8 +87,7 @@
                 </li>
                 {% endif %}
                 {% endfor %}
-            </ul>
-            <ul>
+            
                 {% for category in site.categories %}
                 {% if category[0] == "personalproject" %}
                 <li><a href="/categories/personalproject" class="">개인 프로젝트 ({{category[1].size}})</a></li>
@@ -96,14 +101,18 @@
                 {% endif %}
                 {% endfor %}
             </ul> -->
+        </details>
         </li>
         <li>
-            <span class="nav__sub-title">기타</span>
+            <details>
+                <summary>기타</summary>
+            <!-- <span class="nav__sub-title">기타</span> -->
             {% assign category = site.categories.event %}
             <ul>
                 <li><a href="/categories/event" class="">🗓️ Event ({{category.size}})</a></li>
             </ul>
             <!-- <li><a href="/categories/event" class="">🗓️ Event ({{category.size}})</a></li>-->
+            </details>
         </li>
     </ul>
 </nav>
