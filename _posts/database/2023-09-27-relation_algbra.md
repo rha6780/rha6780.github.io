@@ -91,52 +91,52 @@ tags:
 
 <br>
 
-- **연산 방식에 따른 종류**
+**연산 방식에 따른 종류**
     
-    **세타 조인(theta join: θ)**
-    
-    두 릴레이션에서 공통된 애트리뷰트를 기준으로 비교 연산자를 이용해 조건을 만족하는 튜플을 결합한다.
-    
+  **세타 조인(theta join: θ)**
+  
+  두 릴레이션에서 공통된 애트리뷰트를 기준으로 비교 연산자를 이용해 조건을 만족하는 튜플을 결합한다.
+  
 
-    <br>
+  <br>
 
-    **동등 조인(equi join)**
-    
-    세타 조인 중에서 비교 연산자가 = 인 조인이다.
-    
-    <br>
+  **동등 조인(equi join)**
+  
+  세타 조인 중에서 비교 연산자가 = 인 조인이다.
+  
+  <br>
 
-    **자연 조인**
-    
-    동등 조인의 결과 릴레이션에서 조인 애트리뷰트를 제외한 조인 (중복 필드 제거)
-    
-    <img width="458" alt="Screenshot_2023-09-27_at_3 55 12_AM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/3fa943ff-248a-4fae-9ee6-fb609f1aadff">
+  **자연 조인**
+  
+  동등 조인의 결과 릴레이션에서 조인 애트리뷰트를 제외한 조인 (중복 필드 제거)
+  
+  <img width="458" alt="Screenshot_2023-09-27_at_3 55 12_AM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/3fa943ff-248a-4fae-9ee6-fb609f1aadff">
 
 
-    <br>
+  <br>
 
-    **외부 조인**
-    
-    널값이 있는 튜플을 다루기 위해 확장한 조인으로 대응되는 튜플이 없더라도 결과에 포함하고 해당 값을 null 로 채우는 조인이다. 외부 조인도 어느 릴레이션을 기준으로 할지에 따라서 3가지로 나뉜다.
-    
-    <br>
+  **외부 조인**
+  
+  널값이 있는 튜플을 다루기 위해 확장한 조인으로 대응되는 튜플이 없더라도 결과에 포함하고 해당 값을 null 로 채우는 조인이다. 외부 조인도 어느 릴레이션을 기준으로 할지에 따라서 3가지로 나뉜다.
+  
+  <br>
 
-    왼쪽 외부 조인 ⟕ : 왼쪽을 튜플을 기준으로 값을 넣고 없는 값을 null로 채운다.
-    
-    <img width="455" alt="Screenshot_2023-09-27_at_3 54 54_AM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/a8bb6af2-844d-41b7-9e64-836c2f8d5a7a">
+  왼쪽 외부 조인 ⟕ : 왼쪽을 튜플을 기준으로 값을 넣고 없는 값을 null로 채운다.
+  
+  <img width="455" alt="Screenshot_2023-09-27_at_3 54 54_AM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/a8bb6af2-844d-41b7-9e64-836c2f8d5a7a">
 
-    <br>
+  <br>
 
-    오른쪽 외부 조인 ⟖ : 오른쪽을 튜플을 기준으로 값을 넣고 없는 값을 null로 채운다.
-    
-    <img width="586" alt="Screenshot_2023-09-27_at_3 54 10_AM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/fdceca87-455b-4756-a4f8-3ae4beebdb98">
-    
+  오른쪽 외부 조인 ⟖ : 오른쪽을 튜플을 기준으로 값을 넣고 없는 값을 null로 채운다.
+  
+  <img width="586" alt="Screenshot_2023-09-27_at_3 54 10_AM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/fdceca87-455b-4756-a4f8-3ae4beebdb98">
+  
 
-    <br>
+  <br>
 
-    완전 외부 조인 ⟗ : 두 튜플을 기준으로 값을 넣고 없는 값을 null로 채운다.
-    
-    <img width="595" alt="Screenshot_2023-09-27_at_3 54 33_AM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/af2ca6fd-5cbd-4c2b-9a75-e18fa4734e76">
+  완전 외부 조인 ⟗ : 두 튜플을 기준으로 값을 넣고 없는 값을 null로 채운다.
+  
+  <img width="595" alt="Screenshot_2023-09-27_at_3 54 33_AM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/af2ca6fd-5cbd-4c2b-9a75-e18fa4734e76">
 
 
 
