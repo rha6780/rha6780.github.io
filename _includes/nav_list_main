@@ -20,8 +20,8 @@
                 <li><a href="/categories/web" class="nav__sub-li">WEB ({{category.size}})</a></li>
 
             {% assign category = site.categories.datastructure %}
-            
-                <li><a href="/categories/datastructure" class="">자료구조 ({{category.size}})</a></li>
+
+                <li><a href="/categories/datastructure" class="nav__sub-li">자료구조 ({{category.size}})</a></li>
 
             {% assign category = site.categories.database %}
             
