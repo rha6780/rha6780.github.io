@@ -20,7 +20,7 @@ title                    : "rha6780 :)"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "rha6780"
-description              : "Coding Histroy!"
+description              : "꾸준히 공부, 기록해나가는 개발 블로그"
 url                      : "https://rha6780.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : rha6780/rha6780.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
