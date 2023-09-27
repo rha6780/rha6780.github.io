@@ -220,6 +220,9 @@ sass:
 # paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
+# Permalink
+# Post url 포맷 (pretty : category/data/title) .html 제외
+permalink: pretty
 
 # Plugins (previously gems:)
 plugins:
