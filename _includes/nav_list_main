@@ -26,6 +26,10 @@
             {% assign category = site.categories.database %}
             
                 <li><a href="/categories/database" class="nav__sub-li">DB ({{category.size}})</a></li>
+
+            <!-- {% assign category = site.categories.network %}
+            
+            <li><a href="/categories/network" class="nav__sub-li">Network ({{category.size}})</a></li> -->
             </ul>
             </details>
         </li>
