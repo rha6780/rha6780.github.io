@@ -1,13 +1,10 @@
 version: '3.1'
 
 services:
-  blog:
-    restart: always
-    image: jekyll/jekyll
+  jekyll:
+    build: .
     volumes:
-      - ./:/srv/jekyll
+      - .:/blog
     ports:
       - "4000:4000"
-    command: jekyll serve
-
 
