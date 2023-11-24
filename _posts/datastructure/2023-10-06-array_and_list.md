@@ -1,5 +1,5 @@
 ---
-title: "배열(Array) / 리스트(List)"
+title: "[자료구조] 배열(Array) / 리스트(List)"
 date: 2023-10-06
 categories:
   - datastructure
@@ -78,8 +78,6 @@ List<Integer> list = new LinkedList<Integer>();
 
 List<Integer> list = new Vector<Integer>();
 ```
-
-
 
 <br>
 <br>

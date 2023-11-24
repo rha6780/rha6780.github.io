@@ -1,5 +1,5 @@
 ---
-title: "SQL 중첩 질의와 트리거, 뷰"
+title: "[DB] SQL 중첩 질의와 트리거, 뷰"
 date: 2023-10-29
 
 categories:
@@ -7,7 +7,6 @@ categories:
 tags:
   -
 ---
-
 
 기본적인 SQL 중 SELECT 에 대한 내용과 관계 대수 포스트를 숙지하고 이해해보자.
 
@@ -19,7 +18,6 @@ tags:
 GROUP BY : 특정 애트리뷰트에 동일한 값을 갖는 튜플들을 각각 하나의 그룹으로 묶는다. 이때 사용한 애트리뷰트를 그룹화 애트리뷰트라고 한다.
 
 HAVING : 어떤 조건을 만족하는 그룹에 대해서만 집단 함수를 적용한다.
-
 
 ex) 점수가 90점 이상인 회사별 데이터로 그룹
 
@@ -52,7 +50,7 @@ SELECT E.NAME, M.NAME FROM EMPLOYEE E, EMPLOYEE M WHERE E.MANAGER = M.EMPNO;
 
 **중첩 질의(nested query)**
 
-외부 질의에 WHERE 절을 다시 포함하는 질의문으로 서브 쿼리 라고도 한다. SELECT 외에 DML 인 경우 사용할 수 있다. 
+외부 질의에 WHERE 절을 다시 포함하는 질의문으로 서브 쿼리 라고도 한다. SELECT 외에 DML 인 경우 사용할 수 있다.
 
 ex) 김사라와 같은 직급의 사원들 정보 검색
 
@@ -65,7 +63,6 @@ SELECT * FROM EMPLOYEE WHERE TITLE = (SELECT TITLE FROM EMPLOYEE WHERE ENAME = '
 **상관 중첩 질의(correlated nested query)**
 
 중첩 질의의 WHERE 절에 있는 프레디키트에서 외부 질의에 선언된 릴레이션 일부 애트리뷰트를 참조하는 질의이다.
-
 
 ex) 자신이 속한 부서의 사원들의 평균 급여보다 많은 급여를 받는 사원들에 대해서 이름, 부서, 급여 등을 검색
 
@@ -86,7 +83,7 @@ SELECT NAME, ... FROM EMPLOYEE E WHERE SALARY > (SELECT AVG(SALARY) FROM EMPLOYE
 
 Event : 이벤트의 가능한 예로 튜플 삽입, 삭제, 수정 등이 있다.
 
-Condition :  조건은 임의의 프레디 키트(셀렉션)
+Condition : 조건은 임의의 프레디 키트(셀렉션)
 
 Action : 동작은 DB에 대한 임의 갱신
 
@@ -106,7 +103,7 @@ BEGIN {SQL} END;
 
 <br>
 
-RDBMS 에서 뷰는 다른 릴레이션으로 부터 유도된 릴레이션으로 ANSI/SPARC 3단계의 외부 뷰와 다르다. 
+RDBMS 에서 뷰는 다른 릴레이션으로 부터 유도된 릴레이션으로 ANSI/SPARC 3단계의 외부 뷰와 다르다.
 
 ex) 기획부에 근무하는 사원에 대한 뷰이다.
 
@@ -132,10 +129,10 @@ CREATE VIEW {뷰이름} AS SELECT * FROM EMPLOYEE E, DEPARTMENT D WHERE
 <br>
 
 - **갱신이 불가능한 뷰**
-    - **한 릴레이션 위에서 정의되었으나 그 릴레이션의 기본 키가 포함되지 않은 뷰**
-    - **기본 릴레이션의 애트리뷰트들 중에서 뷰에 포함되지 않은 애트리뷰트에 대해 NOT NULL이 지정되어 있을 때**
-    - **집단 함수가 포함된 뷰**
-    - **조인으로 정의된 뷰**
+  - **한 릴레이션 위에서 정의되었으나 그 릴레이션의 기본 키가 포함되지 않은 뷰**
+  - **기본 릴레이션의 애트리뷰트들 중에서 뷰에 포함되지 않은 애트리뷰트에 대해 NOT NULL이 지정되어 있을 때**
+  - **집단 함수가 포함된 뷰**
+  - **조인으로 정의된 뷰**
 
 <br>
 

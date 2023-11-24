@@ -1,12 +1,11 @@
 ---
-title: "스택(Stack) / 큐(Queue) / 덱(Dequeue)"
+title: "[자료구조] 스택(Stack) / 큐(Queue) / 덱(Dequeue)"
 date: 2023-10-07
 categories:
   - datastructure
 tags:
   -
 ---
-
 
 ## 스택(Stack)
 
@@ -33,7 +32,6 @@ tags:
 
 <img width="475" alt="Screenshot_2023-10-07_at_4 40 42_PM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/e0745f60-cccf-4127-b11b-3c6da7620563">
 
-
 <br>
 
 **특징**
@@ -53,17 +51,13 @@ tags:
 
 선형 큐는 삽입, 삭제를 index+1로 처리한다.
 
-
 <img width="998" alt="Screenshot_2023-10-07_at_5 08 55_PM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/9b5d30e4-1e95-4e78-8d9b-c0ce89c498c3">
-
-
 
 <br>
 
 **원형 큐**
 
 원형 큐는 전체 큐 사이즈의 나머지 연산으로 처리한다.
-
 
 <img width="1080" alt="Screenshot_2023-10-07_at_5 16 43_PM" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/ac174725-37b7-4fce-8869-e5b9cbf52794">
 
@@ -103,8 +97,6 @@ tags:
 **특징**
 
 - 양쪽에서 삽입 삭제가 가능하기 때문에 큐나 스택과 달리 입출력 순서가 보장되지 않는다.
-
-
 
 <br>
 <br>

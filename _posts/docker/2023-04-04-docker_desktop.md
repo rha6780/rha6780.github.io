@@ -1,5 +1,5 @@
 ---
-title: "Docker Desktop 설치"
+title: "[Docker] Docker Desktop 설치"
 date: 2023-04-04
 
 categories:
@@ -14,8 +14,6 @@ Docker Desktop은 일반 docker 뿐만 아니라 docker-compose도 함께 있기
 
 mac, windows, linux에 대해 아래 링크에서 지원하고 있다.
 
-
-
 [ 🔗 Get Docker](https://docs.docker.com/get-docker/)
 
 ### Docker 명령어
@@ -26,4 +24,3 @@ mac, windows, linux에 대해 아래 링크에서 지원하고 있다.
 
 <br>
 <br>
-

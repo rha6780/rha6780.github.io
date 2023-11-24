@@ -1,12 +1,11 @@
 ---
-title: "Terraform 설치"
+title: "[Terraform] Tfenv Tfvar 로 관리하기"
 date: 2023-05-05
 # toc: true
-toc_label: 'Content list'
+toc_label: "Content list"
 toc_sticky: true
 categories:
   - terraform
-
 ---
 
 <br>
@@ -31,7 +30,7 @@ brew install tfenv
 
 ```bash
 git clone https://github.com/tfutils/tfenv.git ~/.tfenv
-echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.bashrc 
+echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.bashrc
 # zsh 라면 ~/.zshrc 등을 이용
 # 필요하다면 symlink 를 적용해도 된다.
 sudo ln -s ~/.tfenv/bin/* /usr/local/bin
@@ -46,7 +45,8 @@ sudo ln -s ~/.tfenv/bin/* /usr/local/bin
 ```bash
 tfenv list-remote
 ```
-특정 버전을 설치하는 경우 `tfenv install version`, 최신 버전의 경우 `tfenv install latest` 등으로 설치할 수 있다. 
+
+특정 버전을 설치하는 경우 `tfenv install version`, 최신 버전의 경우 `tfenv install latest` 등으로 설치할 수 있다.
 
 <p align="center">
 <img width="300" alt="command1" src="https://user-images.githubusercontent.com/47859845/236488460-82fd87c3-62ff-4b50-bc17-939b88978155.png">
@@ -56,13 +56,9 @@ tfenv list-remote
 
 만약 파일들을 스캔해서 필요한 최소 버전을 다운받는 경우 `tfenv install min-required` 를, 최대 버전을 다운 받는 경우 `tfenv install latest-allowed` 를 이용한다.
 
-
-
-
 <br>
 
 이미 설치된 버전은 `tfenv list` 를 통해 볼 수 있다. 설치된 버전에서 특정 버전을 사용하려면 `tfenv use version` 을 이용해서 사용할 수 있다. 만약, 매번 버전 변경이 번거롭다면 .terraform-version 에 사용하는 버전을 작성하면 된다. (주로 많이 사용함)
-
 
 ```bash
 echo 1.4.6 > .terraform-version
@@ -95,7 +91,6 @@ terraform {
 <img width="300" alt="think_man" src="https://user-images.githubusercontent.com/47859845/236488506-b93cc961-85bd-4478-be8f-c7ad48cf43ae.jpeg">
 </p>
 
-
 tfvar 는 무엇일까…? 테라폼을 사용하다보면 VPC, 서브넷 아이디 리소스 아이디 등 여러 값을 변수로 뺄 수 있는데, tfvar는 그런 인스턴스 유형 같은 값들을 따로 관리할 수 있는 파일이다. 더 자세한 내용은 [공식문서](https://developer.hashicorp.com/terraform/language/values/variables)를 참고하자.
 
 <br>
@@ -118,11 +113,9 @@ variable "image_id" {
 
 물론 파일을 지정하지 않는다면.. tfvar 대신 direnv 를 사용해도 문제는 없다. 편한 방식을 찾아서 진행하면 된다. 여기 까지 간단히 설명해두었고, 다음 글 부터 천천히 설명하면서 변수들이 어떻게 사용되는지 소개하도록 하겠다.
 
-
 <p align="center">
 <img width="300" alt="DevOps-meme" src="https://user-images.githubusercontent.com/47859845/236488492-378efb24-6990-4ab1-93e1-94c1b16bc84a.png">
 </p>
-
 
 <br>
 <br>

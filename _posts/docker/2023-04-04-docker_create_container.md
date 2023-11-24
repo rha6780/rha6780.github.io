@@ -1,5 +1,5 @@
 ---
-title: "Docker 이미지 생성, 삭제"
+title: "[Docker] Docker 이미지 생성, 삭제"
 date: 2023-04-04
 
 categories:
@@ -55,7 +55,7 @@ docker run --name 임의의 이름 -p 5432:5432 postgres
 
 <br>
 
-명령어에서 -p에 해당하는 부분이 `호스트 포트 : 컨테이너 포트` 로 포트를 서로 지정하는 것이다. 
+명령어에서 -p에 해당하는 부분이 `호스트 포트 : 컨테이너 포트` 로 포트를 서로 지정하는 것이다.
 
 <br>
 
@@ -74,11 +74,8 @@ docker run --name postgres_db -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d post
 docker ps로 postgres_db라는 이름의 컨테이너를 확인할 수 있다.
 
 - 참고문헌
-    
-    개인적으로 원리를 살펴볼 때 해당 [강의](https://youtu.be/SJFO2w5Q2HI)가 도움이 되었다.
-    
-    [[Docker] Image를 pull 하고 Container를 run 시키기](https://techblog-history-younghunjo1.tistory.com/203)
-    
+  개인적으로 원리를 살펴볼 때 해당 [강의](https://youtu.be/SJFO2w5Q2HI)가 도움이 되었다.
+  [[Docker] Image를 pull 하고 Container를 run 시키기](https://techblog-history-younghunjo1.tistory.com/203)
 
 <br>
 
@@ -125,14 +122,13 @@ RUN 어쩌구 저쩌구...
 print("테스트 실행")
 ```
 
-그리고 Dockerfile을 아래처럼 작성하자. 
+그리고 Dockerfile을 아래처럼 작성하자.
 
 <img width="500" alt="dockerfile" src="https://user-images.githubusercontent.com/47859845/229751634-9353fad4-61cb-4965-bd4a-82a0c666ea13.png">
 
 Workdir의 경우 현재 Dockerfile 위치에서 실제 빌드되는 환경(컨테이너)이 어느 경로에 있는지 지정하는 것이다. 만약 현재 위치가 아니라 test/dummy 라는 폴더아래에서 빌드 및 실행하려면 해당 경로로 지정하면 된다. Copy는 수행되는 환경에 복사할 경로를 지정하는 것이다. Workdir에서 지정한 경로에서 수행하려면 해당 파일들이 필요해서 이를 복사하는 것이다. 사실 현재 경로에 그대로 하는 것이라서 쓸 필요는 없었지만, 학습을 위해 작성하였다.
 
 <img width="500" alt="copy" src="https://user-images.githubusercontent.com/47859845/229751640-8bfc66fc-b9f5-4f1f-8912-836618576330.png">
-
 
 대충 이런식으로 작성하면 build 명령어를 통해 이미지 이름과 경로를 적어 빌드한다.
 
@@ -145,7 +141,6 @@ docker build -t python_docker .
 <img width="723" alt="docker_build" src="https://user-images.githubusercontent.com/47859845/229751632-b8a778dc-4402-428b-bc83-e91e7895b04f.png">
 
 모두 빌드 되었다면 이미지가 정상적으로 생성되었는지 확인하자.
-
 
 <br>
 
@@ -165,29 +160,22 @@ docker run python_docker
 
 <img width="400" alt="docker_exec" src="https://user-images.githubusercontent.com/47859845/229751618-7dd03486-6def-40f0-a971-9e61a6db3a5b.png">
 
-
-
-
 이처럼 우리가 작성한 docker 이미지가 실행된 것을 볼 수 있다. 작성한 내용이 테스트 실행만 담고 있어서 크게 와 닿지 않을 수 있다. 하지만, 거대한 프로젝트를 배포하고 실행 시키려면 이러한 과정을 필요로 할 것이다.
 
 - 컨테이너 실행
-    
-    ```shell
-    docker run --name python_container -d python_docker
-    ```
+
+  ```shell
+  docker run --name python_container -d python_docker
+  ```
 
     <img width="649" alt="Screen Shot 2022-03-06 at 7 20 38 PM" src="https://user-images.githubusercontent.com/47859845/229753635-3067ff4a-d93a-4315-be46-cb819a7687ba.png">
-
-    
 
 <br>
 
 다만, 이렇게 작성한 dockerfile로는 한 컨테이너 밖에 구성하지 못한다. 만약 여러 컨테이너를 구축하고 싶은 경우 docker-compose를 통해 관리할 수 있다.
 
 - 참고자료
-    
-    [[docker] Dockerfile 작성하기_1(이미지 만들고 배포하기)](https://cornswrold.tistory.com/449)
-    
+  [[docker] Dockerfile 작성하기\_1(이미지 만들고 배포하기)](https://cornswrold.tistory.com/449)
 
 <br>
 
@@ -200,10 +188,9 @@ docker-compose는 리눅스가 아닌 환경에서는 공식홈페이지 혹은 
 여러 컨테이너, 이미지를 관리하기 때문에 여러가지 옵션과 필드를 지정한다. 일반적으로 docker-compose.yml은 프로젝트 최상위에 위치시킨다. 우선 compose로 구성할 수 있는 서비스 중 DB를 먼저 생각하고 구성해보자. docker-compose를 이용해 [postgres DB 환경을 구성](https://github.com/docker/compose)해보자.
 
 ```yaml
-version: '3.1'
+version: "3.1"
 
 services:
-
   db:
     image: postgres
     restart: always
@@ -358,11 +345,8 @@ networks:
 이 처럼 지정하면 1234, 3532라는 키가 해당 frontend 서비스의 네트워크 키로 들어간다. 이 외에도 많은 설정이 있는데, 워낙 많아서 아래 링크를 통해 어떤 것이 있는지 확인하는 것이 좋을 것 같다.
 
 - 속성 설명 링크 & 참고자료
-    
-    [compose-spec/spec.md at master · compose-spec/compose-spec](https://github.com/compose-spec/compose-spec/blob/master/spec.md)
-    
-    [Overview of Docker Compose](https://docs.docker.com/compose/)
-    
+  [compose-spec/spec.md at master · compose-spec/compose-spec](https://github.com/compose-spec/compose-spec/blob/master/spec.md)
+  [Overview of Docker Compose](https://docs.docker.com/compose/)
 
 <br>
 
@@ -380,9 +364,7 @@ services:
       - POSTGRES_PASSWORD=postgres
     ports:
       - "5432:5432"
-
 ```
-
 
 <img width="576" alt="docker-compose" src="https://user-images.githubusercontent.com/47859845/229753804-90e8ff06-6568-42a9-a387-fda5cd202ba5.png">
 
@@ -410,7 +392,5 @@ docker image rmi $(docker images -p) -f
 
 ```
 
-
 <br>
 <br>
-

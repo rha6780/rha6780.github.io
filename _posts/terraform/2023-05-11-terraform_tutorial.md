@@ -1,18 +1,16 @@
 ---
-title: " Terraform AWS 리소스 생성 해보기"
+title: "[Terraform] Terraform AWS 리소스 생성 해보기"
 date: 2023-05-11
 # toc: true
-toc_label: 'Content list'
+toc_label: "Content list"
 toc_sticky: true
 categories:
   - terraform
-
 ---
 
 <br>
 
 코드 타입과 Ec2 를 생성하는 가장 쉬운 방법...!
-
 
 ## Terraform 으로 Ec2 인스턴스 생성
 
@@ -31,13 +29,11 @@ brew install awscli
 IAM>보안 자격증명 > 엑세스 키 만들기에서 엑세스 키를 만든다. 보안상 루트 사용자에 추가하는 건 좋지 않지만, 일단 만들어주었다. 자세한 건 추후 AWS 관련 글을 작성할 때 정리하겠다.
 <img width="1103" alt="Screen Shot 2023-05-10 at 7 08 26 PM" src="https://github.com/rha6780/Algorithm/assets/47859845/447ec535-5eee-4281-8b18-6a0008fdf055">
 
-
-
 엑세스 키를 만들면, 해당 엑세스 ID, Secret Key 등이 나온다. 페이지를 나가기 전에 아래와 같이 각각 복사해서 값을 넣어준다.
 
 ```jsx
 # 프로필 이름을 ddprod 라고 일단 붙여두었다. 이름은 마음에 드는 데로 작성하자.
-aws configure --profile ddprod 
+aws configure --profile ddprod
 
 # 전부 다 작성하면 아래에서 값이 잘 되어있는지 확인하자.
 cat ~/.aws/credentials
@@ -77,9 +73,7 @@ provider "aws" {
 
 <img width="1359" alt="Screen Shot 2023-05-10 at 8 11 20 PM" src="https://github.com/rha6780/Algorithm/assets/47859845/3a5957f1-bada-4f7e-85a6-c0f6557cd997">
 
-
 각 코드를 다음과 같이 실행하고 마지막 apply 까지 진행하면 key에 해당하는 위치에 tfstate 가 생성되는 것을 볼 수 있다. 각 서비스(lambda, ec2 등)마다 tfstate를 다르게 저장하기 위해서 폴더 및 경로를 분리시켰다. (추후 수정 될 것이다.)
-
 
 <img width="1359" alt="Screen Shot 2023-05-10 at 8 11 20 PM" src="https://github.com/rha6780/Algorithm/assets/47859845/21550527-fa84-49f6-b1e6-d61bcfe5e701">
 
@@ -166,8 +160,6 @@ filter {
 <br>
 
 해당 코드로 apply 하면 다음과 같이 ec2 서버가 생성된다. tags 의 경우 추후 비용 관련 통계를 보기 위해서 작성해두는 것을 추천한다. 여기서 각 코드 블럭의 filter, tags가 있는데, 코드 타입에 따라서 사용할 수 있는 것이 정의되어있다. 이점은 공식문서를 찾아보는 것이 좋을 것 같다. 😉
-
-
 
 <br>
 <br>

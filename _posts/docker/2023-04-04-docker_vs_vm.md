@@ -1,5 +1,5 @@
 ---
-title: "가상환경과 도커(VM, Docker)"
+title: "[Docker] 가상환경과 도커"
 date: 2023-04-04
 
 categories:
@@ -15,12 +15,8 @@ tags:
 가상환경은 주로 현재 서버의 OS가 아닌 다른 OS가 필요한 경우 사용한다. 또한 팀원간의 언어, 버전, 환경 등을 맞추기 위해서 사용한다. 하지만, 가상환경도 결국 기존 호스트 OS 위에 설치해서 사용하기 때문에 무겁다는 단점과... 가상환경을 설정하는 과정에서 오류나 이슈가 있는 문제가 있었다. 가상환경이 많아지면 할당할 해당 하드웨어의 공간이 모자랄 수 있다. VM 마다 할당하는 기준이 각각 다르고, 하드웨어 자원에 대한 경쟁이 커지면 그에 따른 부하도 커지게 되기 때문에 많은 가상환경을 담기에는 어렵다.
 
 - 참고
-    
-    [[Docker] Docker와 기존 가상화 기술의 차이 알아보기](https://devlog-wjdrbs96.tistory.com/279)
-    
-    [[vSphere] 하드웨어의 가상화 - 메모리](https://1828.tistory.com/entry/vSphere-%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4%EC%9D%98-%EA%B0%80%EC%83%81%ED%99%94-%EB%A9%94%EB%AA%A8%EB%A6%AC)
-
-
+  [[Docker] Docker와 기존 가상화 기술의 차이 알아보기](https://devlog-wjdrbs96.tistory.com/279)
+  [[vSphere] 하드웨어의 가상화 - 메모리](https://1828.tistory.com/entry/vSphere-%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4%EC%9D%98-%EA%B0%80%EC%83%81%ED%99%94-%EB%A9%94%EB%AA%A8%EB%A6%AC)
 
 > 이러한 점을 보완한 도커가 두두둥장!!
 
@@ -33,7 +29,7 @@ tags:
 - 배포 간편화
 - 환경을 코드화 및 공유 가능 (OS 구분없이 공유)
 
- 가상 환경이라고 하면 가장 먼저 생각하는게 OS이다. 현재 PC의 운영체제가 아니라 우리가 지정한 운영체제 환경으로 구성이 가능하다는 특성이 있다. 하지만, 한 컴퓨터에 다양한 가상환경을 구성하다보면 문제가 생길 수도 있다. (물론 현재 메모리나 CPU 성능이 좋다면 큰일은 없지만 좀 더 최적화할 방법이 없을까....? )
+가상 환경이라고 하면 가장 먼저 생각하는게 OS이다. 현재 PC의 운영체제가 아니라 우리가 지정한 운영체제 환경으로 구성이 가능하다는 특성이 있다. 하지만, 한 컴퓨터에 다양한 가상환경을 구성하다보면 문제가 생길 수도 있다. (물론 현재 메모리나 CPU 성능이 좋다면 큰일은 없지만 좀 더 최적화할 방법이 없을까....? )
 
 <br>
 
@@ -45,9 +41,7 @@ tags:
 
 <img src="https://user-images.githubusercontent.com/47859845/229741555-eccd37b5-96f1-4906-97bd-4c3aa9cbaedc.png" alt="VM" style="width: 200px; height: 300px; display: block; margin: auto">
 
-이러한 구조가 가지는 장점은 각 가상환경을 분리하기 때문에 한 애플리케이션에 오류나 문제가 생겨도 다른 애플리케이션에 영향을 주지 않는다는 점이다. 하지만, 실제 구조적으로 호스트 OS가 관리하는 하드웨어 자원들을 할당해서 수행하기 때문에 네트워크나 실제 하드웨어에 따라 구성하는 경우 장점을 가진다. 
-
-
+이러한 구조가 가지는 장점은 각 가상환경을 분리하기 때문에 한 애플리케이션에 오류나 문제가 생겨도 다른 애플리케이션에 영향을 주지 않는다는 점이다. 하지만, 실제 구조적으로 호스트 OS가 관리하는 하드웨어 자원들을 할당해서 수행하기 때문에 네트워크나 실제 하드웨어에 따라 구성하는 경우 장점을 가진다.
 
 <br>
 
@@ -57,9 +51,7 @@ tags:
 
 <img src="https://user-images.githubusercontent.com/47859845/229741538-6c6a2f1d-930b-4fbb-9a7c-5f5b0c914d8f.png" alt="Docker" style="width: 200px; height: 300px; display: block; margin: auto">
 
-
-
-즉, 컨테이너 별로 격리된 환경을 제공하고 하드웨어도 각각 할당하지만, 가상환경과 달리 프로세스처럼 사용되기 때문에  자원을 유연하게 관리한다. 
+즉, 컨테이너 별로 격리된 환경을 제공하고 하드웨어도 각각 할당하지만, 가상환경과 달리 프로세스처럼 사용되기 때문에 자원을 유연하게 관리한다.
 
 도커는 프로세스 처럼 관리하고 기존 호스트 OS 커널을 공유해서 사용하기 때문에 그 과정이 간단하다. 다만, 특정 하드웨어에 대해서 도커에서 세부 설정하지 못하는 경우가 있을 수 있다. 즉, 가상환경과 달리 OS가 따로 없어서 가볍고 간편하다. 따라서 협업 환경을 구성한다는 목적에서 도커를 이용하는 것은 좋다고 할 수 있다.
 
@@ -71,7 +63,7 @@ tags:
 
 각종 하드웨어 자원 및 성능에 대한 테스트를 소개하고 알기 쉽게 작성한 블로그 입니다. 아래 논문을 기준으로 작성한 듯 한데, 해당 논문 믿을만 하다. (학교 도서관에도 있음)
 
-[1-s2.0-S1877050920311315-main.pdf](%E1%84%80%E1%85%A1%E1%84%89%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%E1%84%80%E1%85%AA%20%E1%84%83%E1%85%A9%E1%84%8F%E1%85%A5(VM,%20Docker)%2041cf5c0039f64df18bbfd3890173a10c/1-s2.0-S1877050920311315-main.pdf)
+[1-s2.0-S1877050920311315-main.pdf](<%E1%84%80%E1%85%A1%E1%84%89%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%E1%84%80%E1%85%AA%20%E1%84%83%E1%85%A9%E1%84%8F%E1%85%A5(VM,%20Docker)%2041cf5c0039f64df18bbfd3890173a10c/1-s2.0-S1877050920311315-main.pdf>)
 
 [[ Docker #03 알아보기 3/5 ] - VM vs Docker 성능비교](https://artistdata.tistory.com/5)
 
@@ -79,9 +71,7 @@ tags:
 
 구조적인 개념에 대해서 아래 논문도 좋다.
 
-[A_Holistic_Evaluation_of_Docker_Containers_for_Interfering_Microservices.pdf](%E1%84%80%E1%85%A1%E1%84%89%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%E1%84%80%E1%85%AA%20%E1%84%83%E1%85%A9%E1%84%8F%E1%85%A5(VM,%20Docker)%2041cf5c0039f64df18bbfd3890173a10c/A_Holistic_Evaluation_of_Docker_Containers_for_Interfering_Microservices.pdf)
-
+[A_Holistic_Evaluation_of_Docker_Containers_for_Interfering_Microservices.pdf](<%E1%84%80%E1%85%A1%E1%84%89%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%E1%84%80%E1%85%AA%20%E1%84%83%E1%85%A9%E1%84%8F%E1%85%A5(VM,%20Docker)%2041cf5c0039f64df18bbfd3890173a10c/A_Holistic_Evaluation_of_Docker_Containers_for_Interfering_Microservices.pdf>)
 
 <br>
 <br>
-

@@ -1,12 +1,11 @@
 ---
-title: "순차 리스트(Array List) / 연결 리스트(Linked List) / 벡터(Vector)"
+title: "[자료구조] 순차 리스트(Array List) / 연결 리스트(Linked List) / 벡터(Vector)"
 date: 2023-10-06
 categories:
   - datastructure
 tags:
   -
 ---
-
 
 이전 포스트에 자바에서 List가 인터페이스라는 이야기를 하였다. 이번에는 해당 인터페이스를 구현한 자료구조에 대해서 정리하였다.
 
@@ -19,7 +18,6 @@ tags:
 순차 리스트는 여러 타입의 데이터를 순차적으로 저장 나열한 자료구조이다.
 
 <img width="538" alt="ArrayList Structure" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/fe588bd2-8dee-4382-a59e-67ec7920d8d0">
-
 
 <br>
 <br>
@@ -39,7 +37,6 @@ tags:
 아래 그림과 같이 뭔가 추가하는 경우 현재 값을 복사하면서 값을 추가하기 때문에 기존 메모리크기가 클수록 오버헤드도 클 수 있다.
 
 <img width="488" alt="ArrayList Add Data" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/fd5c1281-0874-4d3f-aa01-8e1fa66e760a">
-
 
 <br>
 <br>
@@ -123,7 +120,6 @@ ArrayList<Integer> arr = new ArrayList<Integer>(collection1);
 
 추가될 노드의 주소를 바로 앞 노드의 주소로 설정하고 다음 노드의 주소를 추가될 노드의 Next로 지정하면 된다. 해당 노드의 메모리가 순차적이지 않아도 되기 때문에 할당은 유동적으로 일어난다.
 
-
 ![Linked List Add Node](https://github.com/rha6780/rha6780.github.io/assets/47859845/15dd1d15-08da-467e-bb74-402900024937)
 
 이중 연결 리스트의 경우도 앞 주소의 변경이 추가된다.
@@ -137,7 +133,6 @@ ArrayList<Integer> arr = new ArrayList<Integer>(collection1);
 <br>
 
 배열과 순차 리스트의 비해 삽입 삭제가 효율적이지만, 해당 구조는 특정 순서의 데이터를 찾기 위해서는 첫번째 노드에서 부터 찾아야 하기 때문에 탐색이 많을때 비효율적이다.
-
 
 <br>
 
@@ -160,7 +155,7 @@ LinkedList<Integer> link = new LinkedList<Integer>();
 
 **특징**
 
-ArrayList 와 동일한 구조를 가져서 ArrayList와 동일한 특징을 가진다. 
+ArrayList 와 동일한 구조를 가져서 ArrayList와 동일한 특징을 가진다.
 
 - 동기화 된 메소드로 이루어져 스레드 환경에서 안정성이 높다.
 - 스레드가 1개 일때에도 동기화 되어 ArrayList에 비해 추가, 검색, 삭제의 성능은 좋지 않다.
