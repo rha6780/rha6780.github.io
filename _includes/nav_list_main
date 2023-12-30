@@ -27,9 +27,9 @@
             
                 <li><a href="/categories/database" class="nav__sub-li">DB ({{category.size}})</a></li>
 
-            <!-- {% assign category = site.categories.network %}
+            {% assign category = site.categories.network %}
             
-            <li><a href="/categories/network" class="nav__sub-li">Network ({{category.size}})</a></li> -->
+                <li><a href="/categories/network" class="nav__sub-li">Network ({{category.size}})</a></li>
             </ul>
             </details>
         </li>
@@ -47,12 +47,7 @@
             {% assign category = site.categories.beakjoon %}
         
             <li><a href="/categories/beakjoon" class="nav__sub-li">Beakjoon ({{category.size}})</a></li>
-            </ul> 
-
-            <!-- {% assign category = site.categories.database %}
-            <ul>
-                <li><a href="/categories/database" class="">DB ({{category.size}})</a></li>
-            </ul> -->
+            </ul>
             </details>
         </li>
         <li>
