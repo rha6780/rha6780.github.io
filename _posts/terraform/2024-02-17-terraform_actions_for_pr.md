@@ -14,7 +14,7 @@ categories:
 
 ### 목표
 
-PR을 열고 push 마다 액션이 돈다.. 그러면 위 사진과 같이 커맨트로 Plan의 결과를 보여주는 것이다.
+PR을 열고 push 마다 액션이 돈다.. 그러면 아래 사진과 같이 커맨트로 Plan의 결과를 보여주는 것이다.
 
 <p align="center">
 <img width="600" alt="target" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/66fe8aeb-1be2-4bcf-beba-cb2eaab2aeec">
@@ -182,6 +182,7 @@ jobs:
 <br>
 
 **참고 링크**
+
 아래 링크를 참고해서 스크립트를 작성하였다...
 
 - [마켓 플레이스 관련](https://github.com/marketplace/actions/terraform-plan)
