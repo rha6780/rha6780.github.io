@@ -241,5 +241,207 @@ PR당 변경되는 서비스가 적으면 상관없지만...
 
 스크립트 작성을 하면서 sed 명령어를 많이 사용하게 되었는데, 조만간 한번 정리하겠다...!
 
+## Plan 결과를 하나의 커맨트로...!
+
+위에서 커맨트가 많이 달리는 문제가 있었다. 또한, 변경사항이 없는 경우 나타나지 않게 하려고 했는데, 특정 파일의 수정이 변경사항이 없다는 것을 보여줘야 하는 경우도 있기 때문에 변경사항이 없어도, 해당 파일의 서비스의 plan 결과를 보여주도록 하였다.
+
+우선 하나의 커맨트로 만드는 것은 파일을 이용하였다. actions/upload-artifact 를 이용해서 해당 결과를 파일에 각각 파일로 작성하고, 마지막 job에서 해당 아티팩트 내부 내용을 모두 출력하는 것이다.
+
+```
+name: "Terraform Plan"
+
+on: push
+
+env:
+  TF_LOG: INFO
+  TF_INPUT: false
+  TE_VERSION: 1.4.2
+  TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+  text: ""
+
+
+jobs:
+  setup:
+    name: Find Diff Dir
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.value }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - id: matrix
+        run: |
+          DIFF_DIR=`git --no-pager diff --name-only origin/develop HEAD`
+          DIFF_DIR=`echo "${DIFF_DIR}" | sed 's|/[^/]*$||'`
+
+          DIR_ARR=(`echo "${DIFF_DIR}"| awk '!seen[$0]++' | tr ' ' ', '`)
+
+          ARR=()
+          for dir in ${DIR_ARR[@]}
+          do
+              if [[ "$dir" == "${DIR_ARR[${#DIR_ARR[@]}-1]}" ]]; then
+                  ARR+=(`echo "\"$dir\""`)
+              else
+                  ARR+=(`echo "\"$dir\","`)
+              fi
+          done
+          echo "value=[${ARR[@]}]" >> $GITHUB_OUTPUT
+
+
+# 병렬로 우분투가 실행됨.
+  terraform-plan:
+    needs: [ setup ]
+    name: "Terraform Plan"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        value: ${{fromJSON(needs.setup.outputs.matrix)}}
+    permissions:
+      contents: read
+      pull-requests: write
+    defaults:
+      run:
+        working-directory: ./${{ matrix.value }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Check TF File Exist
+        id: check-file
+        run: |
+          if [[ -e "main.tf" ]]; then
+              echo "exist=true" >> $GITHUB_OUTPUT
+          else
+              echo "exist=false" >> $GITHUB_OUTPUT
+          fi
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        if: ${{ steps.check-file.outputs.exist == 'true' }}
+        with:
+          terraform_version: ${{ env.TE_VERSION }}
+          cli_config_credentials_token: ${{ env.TF_API_TOKEN }}
+      - name: Terraform Init
+        if: ${{ steps.check-file.outputs.exist == 'true' }}
+        id: init
+        run: |
+          terraform init -input=false
+      - name: Terraform Format
+        if: ${{ steps.check-file.outputs.exist == 'true' }}
+        id: fmt
+        run: terraform fmt -check
+      - name: Terraform Plan
+        if: ${{ steps.check-file.outputs.exist == 'true' }}
+        id: plan
+        run: |
+          plan_result=`terraform plan -no-color`
+          service_name=`echo ${{ matrix.value }} | tr '/' '-'`
+          cd ${{ github.workspace }}
+          mkdir outputs
+          echo "${value}
+
+          <details><summary>Show Plan(${{ matrix.value }})</summary>
+
+          \`\`\`
+
+          ${plan_result}
+
+          \`\`\`
+
+          </details>
+
+          " > ${{ github.workspace }}/outputs/terraform-${service_name}.txt
+
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: outputs
+          path: ${{ github.workspace }}/outputs/*.txt
+          if-no-files-found: warn
+      - name: Result Out
+        if: ${{ steps.check-file.outputs.exist == 'true' }}
+        run: |
+          echo $text
+
+# TODO: 각 terraform plan 된 결과를 가져와서 출력함.
+  create-comment:
+    runs-on: ubuntu-latest
+    needs: [ setup, terraform-plan ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Download result
+        uses: actions/download-artifact@v3
+        with:
+          name: outputs
+          path: ${{ github.workspace }}/outputs
+      - name: Print the result
+        id: summary
+        shell: bash
+        run: |
+          ls ${{ github.workspace }}/outputs
+          {
+            cat ${{ github.workspace }}/outputs/*.txt
+          } > plan.out
+
+      - name: Create Comments
+        uses: actions/github-script@v6
+        id: comment
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pullRequests = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              head: `${context.repo.owner}:${context.ref.replace('refs/heads/', '')}`
+            })
+
+            const issueNumber = context.issue.number || pullRequests.data[0].number
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+            });
+            const botComment = comments.find(comment => {
+              return comment.user.type === 'Bot' && comment.body.includes("Terraform Cloud Plan Output")
+            });
+            const { readFile } = require("fs/promises")
+            const plan_result = await readFile('plan.out')
+            const output = `
+            **Terraform Cloud Plan Output**
+
+            ${plan_result}
+
+            **Pusher: @${{ github.actor }}**`;
+            if (botComment) {
+              github.rest.issues.deleteComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+              });
+            }
+
+            github.rest.issues.createComment({
+              issue_number: issueNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
+```
+
+<br>
+
+이렇게 하면 하나의 커맨트에 각 서비스 별 변경 정보를 알 수 있게 된다.
+
+<img width="500" alt="Plan Output" src="https://github.com/rha6780/rha6780.github.io/assets/47859845/ad9b372c-94ce-4b5a-9d53-1bdf5e94ed3b">
+
+단, 해당 잡이 PR 이후 master에 머지될 때에도 실행되는 문제가 있어, 머지에서는 실패하게 된다. 액션 실행 트리거를 조금 손보면 되는데... 이 부분은 쉬우니까 각자 한번 해보자.
+
+<br>
+
+또한, 마스터를 기준으로 하기 때문에 pull 받지않은 경우 내가 작업하지 않은 부분이 plan에 잡힐 수 있다.
+
 <br>
 <br>
