@@ -151,6 +151,16 @@ body {
     }
   }
 
+  /* posts (single layout): remove default left padding on unordered lists */
+  .layout--single & ul {
+    padding-left: 1rem;
+    margin-left: 0.5rem;
+
+    > li > p {
+      font-size: 0.7rem;
+    }
+  }
+
   dt {
     margin-top: 1em;
     font-family: $sans-serif;
