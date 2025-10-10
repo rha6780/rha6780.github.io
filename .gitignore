@@ -28,3 +28,11 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+
+# Obsidian
+.obsidian
+.obsidian/
+.obsidian/workspace/
+.obsidian/workspace/workspace.json
+.obsidian/workspace/workspace.jsonc
+.obsidian/workspace/workspace.jsonc

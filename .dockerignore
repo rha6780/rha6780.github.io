@@ -1,0 +1,5 @@
+.obsidian
+node_modules
+.git
+vendor
+.bundle
