@@ -30,6 +30,7 @@ _asset_bundler_cache
 _site
 
 # Obsidian
+obsidian
 .obsidian
 .obsidian/
 .obsidian/workspace/
